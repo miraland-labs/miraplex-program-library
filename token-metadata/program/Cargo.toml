@@ -1,9 +1,9 @@
 [package]
-name = "mpl-token-metadata"
+name = "miraplex-token-metadata"
 version = "1.7.0"
-description = "Metaplex Metadata"
+description = "Miraplex Metadata derived from Metaplex"
 authors = ["Metaplex Developers <dev@metaplex.com>"]
-repository = "https://github.com/metaplex-foundation/metaplex-program-library"
+repository = "https://github.com/miraland-labs/miraplex-program-library"
 license-file = "../../LICENSE"
 edition = "2021"
 readme = "README.md"
@@ -17,24 +17,25 @@ serde-feature = ["serde", "serde_with"]
 num-derive = "0.3"
 arrayref = "0.3.6"
 num-traits = "0.2"
-solana-program = "1.14"
-spl-token = { version = "3.2.0", features = ["no-entrypoint"] }
-spl-associated-token-account = { version = "1.1.1", features = ["no-entrypoint"] }
+miraland-program = "=1.14.17-rc4"
+solarti-token = { version = "3.5", features = ["no-entrypoint"] }
+solarti-associated-token-account = { version = "1.1", features = ["no-entrypoint"] }
 mpl-token-auth-rules = { version = "1.0", features = ["no-entrypoint"] }
 thiserror = "1.0"
 borsh = "0.9.2"
 shank = { version = "0.0.11" }
 serde = { version = "1.0.149", optional = true }
 serde_with = { version = "1.14.0", optional = true }
-mpl-utils = { version = "0.0.6", path="../../core/rust/utils" }
-mpl-token-metadata-context-derive = { version = "0.2.1", path = "../macro" }
+miraplex-utils = { version = "0.0.6", path="../../core/rust/utils" }
+miraplex-token-metadata-context-derive = { version = "0.2.1", path = "../macro" }
 
 [dev-dependencies]
 rmp-serde = "1.1.1"
-rooster = { git = "https://github.com/metaplex-foundation/rooster" }
-solana-sdk = "1.14"
-solana-program-test = "1.14"
+rooster = { git = "https://github.com/miraland-labs/rooster" }
+miraland-sdk = "=1.14.17-rc4"
+miraland-program-test = "=1.14.17-rc4"
 serde = { version = "1.0.147", features = ["derive"]}
 
 [lib]
 crate-type = ["cdylib", "lib"]
+name = "mpl_token_metadata"

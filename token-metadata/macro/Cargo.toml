@@ -1,15 +1,16 @@
 [package]
-name = "mpl-token-metadata-context-derive"
+name = "miraplex-token-metadata-context-derive"
 version = "0.2.1"
 edition = "2021"
-description = "Metaplex Metadata"
+description = "Miraplex Metadata"
 authors = ["Metaplex Developers <dev@metaplex.com>"]
-repository = "https://github.com/metaplex-foundation/metaplex-program-library"
+repository = "https://github.com/miraland-labs/miraplex-program-library"
 license-file = "../../LICENSE"
 readme = "README.md"
 
 [lib]
 proc-macro = true
+name = "mpl_token_metadata_context_derive"
 
 [dependencies]
 quote = "1.0.21"

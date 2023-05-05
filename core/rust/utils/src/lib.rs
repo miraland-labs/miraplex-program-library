@@ -6,5 +6,5 @@ mod account;
 mod assertions;
 mod misc;
 
-#[cfg(feature = "spl-token")]
+#[cfg(feature = "solarti-token")]
 pub mod token;
