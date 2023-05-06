@@ -12,7 +12,7 @@ function localDeployPath(programName) {
 const programs = {
   metadata: {
     label: 'Metadata',
-    programId: 'metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s',
+    programId: 'Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv',
     deployPath: localDeployPath('mpl_token_metadata'),
   },
   token_sale: {
@@ -37,7 +37,7 @@ const programs = {
   },
   token_auth_rules: {
     label: 'Token Auth Rules',
-    programId: 'auth9SigNpDKz4sJJ1DfCTuZrZNSAgh9sFD3rboVmgg',
+    programId: 'AuthxYNhPnnrGBo1wdzeUdukrsFpHvR42wghx8ZPNEo4',
     deployPath: localDeployPath('mpl_token_auth_rules'),
   },
 };

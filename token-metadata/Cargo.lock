@@ -410,9 +410,9 @@ dependencies = [
 
 [[package]]
 name = "bytemuck"
-version = "1.13.0"
+version = "1.13.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "c041d3eab048880cb0b86b256447da3f18859a163c3b8d8893f4e6368abe6393"
+checksum = "17febce684fd15d89027105661fec94afb475cb995fbc59d2865198446ba2eea"
 dependencies = [
  "bytemuck_derive",
 ]
@@ -2732,6 +2732,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "miraplex-token-auth-rules"
+version = "1.3.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "21455ba8993996a3c196abadecd0bd426da1de9cdd14b3b8477438a665bd2667"
+dependencies = [
+ "borsh",
+ "bytemuck",
+ "miraland-program",
+ "miraland-zk-token-sdk",
+ "miraplex-token-metadata-context-derive 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "num-derive",
+ "num-traits",
+ "rmp-serde",
+ "serde",
+ "shank 0.0.11",
+ "thiserror",
+]
+
+[[package]]
 name = "miraplex-token-metadata"
 version = "1.7.0"
 dependencies = [
@@ -2740,9 +2759,9 @@ dependencies = [
  "miraland-program",
  "miraland-program-test",
  "miraland-sdk",
- "miraplex-token-metadata-context-derive",
+ "miraplex-token-auth-rules",
+ "miraplex-token-metadata-context-derive 0.2.1",
  "miraplex-utils",
- "mpl-token-auth-rules",
  "num-derive",
  "num-traits",
  "rmp-serde",
@@ -2758,6 +2777,16 @@ dependencies = [
 [[package]]
 name = "miraplex-token-metadata-context-derive"
 version = "0.2.1"
+dependencies = [
+ "quote 1.0.23",
+ "syn 1.0.107",
+]
+
+[[package]]
+name = "miraplex-token-metadata-context-derive"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ec66e58d6cdf57a2d7ff8901c36d78424f63aba89d92905da8617c548bcc4c84"
 dependencies = [
  "quote 1.0.23",
  "syn 1.0.107",

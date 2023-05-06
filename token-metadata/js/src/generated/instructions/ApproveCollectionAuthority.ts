@@ -57,7 +57,7 @@ export const approveCollectionAuthorityInstructionDiscriminator = 23;
  */
 export function createApproveCollectionAuthorityInstruction(
   accounts: ApproveCollectionAuthorityInstructionAccounts,
-  programId = new web3.PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s'),
+  programId = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
 ) {
   const [data] = ApproveCollectionAuthorityStruct.serialize({
     instructionDiscriminator: approveCollectionAuthorityInstructionDiscriminator,

@@ -75,7 +75,7 @@ export const deprecatedMintNewEditionFromMasterEditionViaPrintingTokenInstructio
  */
 export function createDeprecatedMintNewEditionFromMasterEditionViaPrintingTokenInstruction(
   accounts: DeprecatedMintNewEditionFromMasterEditionViaPrintingTokenInstructionAccounts,
-  programId = new web3.PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s'),
+  programId = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
 ) {
   const [data] = DeprecatedMintNewEditionFromMasterEditionViaPrintingTokenStruct.serialize({
     instructionDiscriminator:

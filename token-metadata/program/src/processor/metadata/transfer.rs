@@ -1,7 +1,8 @@
 use std::fmt::Display;
 
 use borsh::BorshDeserialize;
-use mpl_token_auth_rules::processor::cmp_pubkeys;
+// use mpl_token_auth_rules::processor::cmp_pubkeys; // MI: compile error with this
+use mpl_token_auth_rules::utils::cmp_pubkeys; // MI
 use mpl_utils::{assert_signer, token::TokenTransferParams};
 use solana_program::{
     account_info::AccountInfo,

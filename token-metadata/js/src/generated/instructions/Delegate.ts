@@ -88,7 +88,7 @@ export const delegateInstructionDiscriminator = 44;
 export function createDelegateInstruction(
   accounts: DelegateInstructionAccounts,
   args: DelegateInstructionArgs,
-  programId = new web3.PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s'),
+  programId = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
 ) {
   const [data] = DelegateStruct.serialize({
     instructionDiscriminator: delegateInstructionDiscriminator,

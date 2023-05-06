@@ -86,7 +86,7 @@ export const unlockInstructionDiscriminator = 47;
 export function createUnlockInstruction(
   accounts: UnlockInstructionAccounts,
   args: UnlockInstructionArgs,
-  programId = new web3.PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s'),
+  programId = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
 ) {
   const [data] = UnlockStruct.serialize({
     instructionDiscriminator: unlockInstructionDiscriminator,

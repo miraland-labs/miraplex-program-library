@@ -86,7 +86,7 @@ export const approveUseAuthorityInstructionDiscriminator = 20;
 export function createApproveUseAuthorityInstruction(
   accounts: ApproveUseAuthorityInstructionAccounts,
   args: ApproveUseAuthorityInstructionArgs,
-  programId = new web3.PublicKey('metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s'),
+  programId = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
 ) {
   const [data] = ApproveUseAuthorityStruct.serialize({
     instructionDiscriminator: approveUseAuthorityInstructionDiscriminator,
