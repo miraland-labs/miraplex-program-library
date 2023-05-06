@@ -7,7 +7,7 @@ import { Test } from 'tape';
 export * from './errors';
 
 export const SPL_ASSOCIATED_TOKEN_ACCOUNT_PROGRAM_ID: PublicKey = new PublicKey(
-  'ATokenGPvbdGVxr1b2hvZbsiqW5xWH25efTNsLJA8knL',
+  'ATAccPjxdgWfJKKN4PmfJ55FbEDEwD8zJUwVjuL9MuHy',
 );
 
 export function spokSameBignum(a?: BN | bignum): Specification<bignum> {
