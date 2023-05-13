@@ -9,7 +9,7 @@ use mpl_token_metadata::{
 };
 use num_traits::FromPrimitive;
 use rooster::instruction::DelegateArgs as RoosterDelegateArgs;
-use solana_program::{native_token::LAMPORTS_PER_SOL, program_pack::Pack, pubkey::Pubkey};
+use solana_program::{native_token::LAMPORTS_PER_MLN, program_pack::Pack, pubkey::Pubkey};
 use solana_program_test::*;
 use solana_sdk::{
     instruction::InstructionError,
@@ -27,7 +27,7 @@ mod standard_transfer {
         state::TokenStandard,
     };
     use solana_program::{
-        native_token::LAMPORTS_PER_SOL, program_option::COption, program_pack::Pack, pubkey::Pubkey,
+        native_token::LAMPORTS_PER_MLN, program_option::COption, program_pack::Pack, pubkey::Pubkey,
     };
     use spl_associated_token_account::get_associated_token_address;
 
@@ -44,7 +44,7 @@ mod standard_transfer {
 
         let destination_owner = Keypair::new().pubkey();
         let destination_token = get_associated_token_address(&destination_owner, &da.mint.pubkey());
-        airdrop(&mut context, &destination_owner, LAMPORTS_PER_SOL)
+        airdrop(&mut context, &destination_owner, LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -102,7 +102,7 @@ mod standard_transfer {
 
         let destination_owner = Keypair::new().pubkey();
         let destination_token = get_associated_token_address(&destination_owner, &da.mint.pubkey());
-        airdrop(&mut context, &destination_owner, LAMPORTS_PER_SOL)
+        airdrop(&mut context, &destination_owner, LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -160,7 +160,7 @@ mod standard_transfer {
 
         let destination_owner = Pubkey::new_unique();
         let destination_token = get_associated_token_address(&destination_owner, &da.mint.pubkey());
-        airdrop(&mut context, &destination_owner, LAMPORTS_PER_SOL)
+        airdrop(&mut context, &destination_owner, LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -210,7 +210,7 @@ mod standard_transfer {
             .unwrap();
 
         let delegate = Keypair::new();
-        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_SOL)
+        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -245,7 +245,7 @@ mod standard_transfer {
 
         let destination_owner = Pubkey::new_unique();
         let destination_token = get_associated_token_address(&destination_owner, &da.mint.pubkey());
-        airdrop(&mut context, &destination_owner, LAMPORTS_PER_SOL)
+        airdrop(&mut context, &destination_owner, LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -295,7 +295,7 @@ mod standard_transfer {
             .unwrap();
 
         let delegate = Keypair::new();
-        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_SOL)
+        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -330,7 +330,7 @@ mod standard_transfer {
 
         let destination_owner = Pubkey::new_unique();
         let destination_token = get_associated_token_address(&destination_owner, &da.mint.pubkey());
-        airdrop(&mut context, &destination_owner, LAMPORTS_PER_SOL)
+        airdrop(&mut context, &destination_owner, LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -340,7 +340,7 @@ mod standard_transfer {
         };
 
         let fake_delegate = Keypair::new();
-        airdrop(&mut context, &fake_delegate.pubkey(), LAMPORTS_PER_SOL)
+        airdrop(&mut context, &fake_delegate.pubkey(), LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -633,7 +633,7 @@ mod auth_rules_transfer {
         // Create a transfer delegate
         let payer = context.payer.dirty_clone();
         let delegate = Keypair::new();
-        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_SOL)
+        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_MLN)
             .await
             .unwrap();
 
@@ -797,7 +797,7 @@ mod auth_rules_transfer {
         // Create a sale delegate
         let payer = context.payer.dirty_clone();
         let delegate = Keypair::new();
-        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_SOL)
+        airdrop(&mut context, &delegate.pubkey(), LAMPORTS_PER_MLN)
             .await
             .unwrap();
 

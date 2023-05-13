@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Connection, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { Connection, Keypair, LAMPORTS_PER_MLN } from '@solana/web3.js';
 import * as splToken from '@solana/spl-token';
 import { expect, use } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
@@ -393,7 +393,7 @@ describe('fanout', async () => {
       const sent = 10;
       const beforeUnstake = await fanoutSdk.fetch<Fanout>(builtFanout.fanout, Fanout);
       await connection.requestAirdrop(builtFanout.fanoutAccountData.accountKey, sent);
-      const firstSnapshot = sent * LAMPORTS_PER_SOL;
+      const firstSnapshot = sent * LAMPORTS_PER_MLN;
       //@ts-ignore
       const firstMemberAmount = firstSnapshot * 0.2;
       const member1 = builtFanout.members[0];

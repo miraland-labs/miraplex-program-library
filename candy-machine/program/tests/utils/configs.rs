@@ -1,4 +1,4 @@
-use solana_program::{native_token::LAMPORTS_PER_SOL, pubkey::Pubkey};
+use solana_program::{native_token::LAMPORTS_PER_MLN, pubkey::Pubkey};
 use solana_sdk::signer::Signer;
 
 use mpl_candy_machine::{
@@ -9,7 +9,7 @@ use mpl_candy_machine::{
 use crate::utils::CandyManager;
 
 pub const DEFAULT_UUID: &str = "ABCDEF";
-pub const DEFAULT_PRICE: u64 = LAMPORTS_PER_SOL;
+pub const DEFAULT_PRICE: u64 = LAMPORTS_PER_MLN;
 pub const ITEMS_AVAILABLE: u64 = 11;
 pub const DEFAULT_SYMBOL: &str = "SYMBOL";
 

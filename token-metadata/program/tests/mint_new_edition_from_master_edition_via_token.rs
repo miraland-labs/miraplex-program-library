@@ -21,7 +21,7 @@ use utils::*;
 // via (cd ../../token-vault/program/ && cargo build-bpf)
 mod mint_new_edition_from_master_edition_via_token {
 
-    use solana_program::native_token::LAMPORTS_PER_SOL;
+    use solana_program::native_token::LAMPORTS_PER_MLN;
 
     use super::*;
     #[tokio::test]
@@ -70,7 +70,7 @@ mod mint_new_edition_from_master_edition_via_token {
         let creator = Keypair::new();
 
         let creator_pub = creator.pubkey();
-        airdrop(&mut context, &creator_pub.clone(), 3 * LAMPORTS_PER_SOL)
+        airdrop(&mut context, &creator_pub.clone(), 3 * LAMPORTS_PER_MLN)
             .await
             .unwrap();
         let test_master_edition = MasterEditionV2::new(&test_metadata);

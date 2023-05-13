@@ -1,4 +1,4 @@
-import { Account, Connection, Keypair, LAMPORTS_PER_SOL } from '@solana/web3.js';
+import { Account, Connection, Keypair, LAMPORTS_PER_MLN } from '@solana/web3.js';
 import { NodeWallet } from '@project-serum/common'; //TODO remove this
 import { NATIVE_MINT, Token, TOKEN_PROGRAM_ID } from '@solana/spl-token';
 import { expect, use } from 'chai';
@@ -16,12 +16,12 @@ describe('fanout', async () => {
   let fanoutSdk: FanoutClient;
   beforeEach(async () => {
     authorityWallet = Keypair.generate();
-    await connection.requestAirdrop(authorityWallet.publicKey, LAMPORTS_PER_SOL * 10);
+    await connection.requestAirdrop(authorityWallet.publicKey, LAMPORTS_PER_MLN * 10);
     fanoutSdk = new FanoutClient(
       connection,
       new NodeWallet(new Account(authorityWallet.secretKey)),
     );
-    await connection.requestAirdrop(authorityWallet.publicKey, LAMPORTS_PER_SOL * 10);
+    await connection.requestAirdrop(authorityWallet.publicKey, LAMPORTS_PER_MLN * 10);
   });
 
   describe('Wallet membership model', () => {

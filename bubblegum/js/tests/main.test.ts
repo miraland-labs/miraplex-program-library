@@ -1,7 +1,7 @@
 import {
   Connection,
   Keypair,
-  LAMPORTS_PER_SOL,
+  LAMPORTS_PER_MLN,
   PublicKey,
   sendAndConfirmTransaction,
   SystemProgram,
@@ -131,7 +131,7 @@ describe('Bubblegum tests', () => {
   const payer = payerKeypair.publicKey;
 
   beforeEach(async () => {
-    await connection.requestAirdrop(payer, LAMPORTS_PER_SOL);
+    await connection.requestAirdrop(payer, LAMPORTS_PER_MLN);
   });
   it('Can create a Bubblegum tree and mint to it', async () => {
     const compressedNFT: MetadataArgs = {
@@ -155,7 +155,7 @@ describe('Bubblegum tests', () => {
     let merkleTree: PublicKey;
     const originalCompressedNFT = makeCompressedNFT('test', 'TST');
     beforeEach(async () => {
-      await connection.requestAirdrop(payer, LAMPORTS_PER_SOL);
+      await connection.requestAirdrop(payer, LAMPORTS_PER_MLN);
       const result = await setupTreeWithCompressedNFT(
         connection,
         payerKeypair,

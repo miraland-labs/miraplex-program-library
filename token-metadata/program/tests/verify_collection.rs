@@ -11,7 +11,7 @@ use mpl_token_metadata::{
     utils::puffed_out_string,
 };
 use num_traits::FromPrimitive;
-use solana_program::{borsh::try_from_slice_unchecked, native_token::LAMPORTS_PER_SOL};
+use solana_program::{borsh::try_from_slice_unchecked, native_token::LAMPORTS_PER_MLN};
 use solana_program_test::*;
 use solana_sdk::{
     account::{Account, AccountSharedData},
@@ -1363,7 +1363,7 @@ async fn success_collection_authority_delegate_revoke() {
     data[1] = bump; // bump
 
     let record_account = Account {
-        lamports: LAMPORTS_PER_SOL,
+        lamports: LAMPORTS_PER_MLN,
         data,
         owner: mpl_token_metadata::ID,
         executable: false,
