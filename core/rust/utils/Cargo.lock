@@ -615,7 +615,7 @@ dependencies = [
 
 [[package]]
 name = "miraland-frozen-abi"
-version = "1.14.17-rc4"
+version = "1.14.17-rc5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "7318113fdfaf4278a43ba2055605a698bca8f944b86e8b6727c46c38f1ba5d36"
 dependencies = [
@@ -649,7 +649,7 @@ dependencies = [
 
 [[package]]
 name = "miraland-frozen-abi-macro"
-version = "1.14.17-rc4"
+version = "1.14.17-rc5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9854ef8df1822aded6b37f5ed6fa7051c4cb7e1bc25a1ca269f71795386ee35f"
 dependencies = [
@@ -661,7 +661,7 @@ dependencies = [
 
 [[package]]
 name = "miraland-program"
-version = "1.14.17-rc4"
+version = "1.14.17-rc5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dfc309b8a233afeb95942e52622cb16db6d6c3370a1a0ebfc80e5498f11ebbea"
 dependencies = [
@@ -710,7 +710,7 @@ dependencies = [
 
 [[package]]
 name = "miraland-sdk-macro"
-version = "1.14.17-rc4"
+version = "1.14.17-rc5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "6d2fe14181b00c6809d4378da9ba56588d52e406ba4cb800fc6fa64317efe5ce"
 dependencies = [
