@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { MembershipModel, membershipModelBeet } from '../types/MembershipModel';
 
 /**
@@ -237,9 +237,9 @@ export const fanoutBeet = new beet.FixableBeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['authority', beetSolana.publicKey],
+    ['authority', beetMiraland.publicKey],
     ['name', beet.utf8String],
-    ['accountKey', beetSolana.publicKey],
+    ['accountKey', beetMiraland.publicKey],
     ['totalShares', beet.u64],
     ['totalMembers', beet.u64],
     ['totalInflow', beet.u64],
@@ -248,7 +248,7 @@ export const fanoutBeet = new beet.FixableBeetStruct<
     ['accountOwnerBumpSeed', beet.u8],
     ['totalAvailableShares', beet.u64],
     ['membershipModel', membershipModelBeet],
-    ['membershipMint', beet.coption(beetSolana.publicKey)],
+    ['membershipMint', beet.coption(beetMiraland.publicKey)],
     ['totalStakedShares', beet.coption(beet.u64)],
   ],
   Fanout.fromArgs,

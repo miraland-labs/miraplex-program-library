@@ -1,5 +1,5 @@
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Metadata } from '../generated/accounts/Metadata';
 import { collectionBeet } from '../generated/types/Collection';
 import { collectionDetailsBeet } from '../generated/types/CollectionDetails';
@@ -29,12 +29,12 @@ export function deserialize(buf: Buffer, offset = 0): [Metadata, number] {
   cursor += keyBeet.byteSize;
 
   // updateAuthority
-  const updateAuthority = beetSolana.publicKey.read(buf, cursor);
-  cursor += beetSolana.publicKey.byteSize;
+  const updateAuthority = beetMiraland.publicKey.read(buf, cursor);
+  cursor += beetMiraland.publicKey.byteSize;
 
   // mint
-  const mint = beetSolana.publicKey.read(buf, cursor);
-  cursor += beetSolana.publicKey.byteSize;
+  const mint = beetMiraland.publicKey.read(buf, cursor);
+  cursor += beetMiraland.publicKey.byteSize;
 
   // data
   const [data, dataDelta] = dataBeet.deserialize(buf, cursor);

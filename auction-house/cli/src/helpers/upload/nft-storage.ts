@@ -3,7 +3,7 @@ import log from 'loglevel';
 import path from 'path';
 import { NFTStorageMetaplexor, NFTBundle } from '@nftstorage/metaplex-auth';
 import { NFTStorage } from 'nft.storage';
-import { Keypair } from '@solana/web3.js';
+import { Keypair } from '@solarti/web3.js';
 import * as cliProgress from 'cli-progress';
 import { AssetKey } from '../../types';
 

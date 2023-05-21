@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 
 /**
  * Arguments used to create {@link Auctioneer}
@@ -76,7 +76,7 @@ export class Auctioneer implements AuctioneerArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('hausS13jsjafwWwGqZTUQRmWyvyxn9EQpqMwV1PBBmk'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, auctioneerBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, auctioneerBeet);
   }
 
   /**
@@ -152,8 +152,8 @@ export const auctioneerBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['auctioneerAuthority', beetSolana.publicKey],
-    ['auctionHouse', beetSolana.publicKey],
+    ['auctioneerAuthority', beetMiraland.publicKey],
+    ['auctionHouse', beetMiraland.publicKey],
     ['bump', beet.u8],
   ],
   Auctioneer.fromArgs,

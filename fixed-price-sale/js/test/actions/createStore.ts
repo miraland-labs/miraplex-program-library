@@ -1,6 +1,6 @@
 import test from 'tape';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
-import { Connection, Keypair } from '@solana/web3.js';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
+import { Connection, Keypair } from '@solarti/web3.js';
 
 import {
   createCreateStoreInstruction,

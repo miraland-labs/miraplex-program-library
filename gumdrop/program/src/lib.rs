@@ -726,7 +726,7 @@ fn issue_mint_nft<'info>(
     claim_remaining_accounts: &[AccountInfo<'info>],
     wallet_bump: u8,
 ) -> Result<()> {
-    // Transfer the required SOL from the payer
+    // Transfer the required MLN from the payer
     let required_lamports;
     let remaining_accounts;
     {

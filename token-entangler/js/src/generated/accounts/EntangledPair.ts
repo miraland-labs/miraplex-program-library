@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link EntangledPair}
@@ -193,12 +193,12 @@ export const entangledPairBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['treasuryMint', beetSolana.publicKey],
-    ['mintA', beetSolana.publicKey],
-    ['mintB', beetSolana.publicKey],
-    ['tokenAEscrow', beetSolana.publicKey],
-    ['tokenBEscrow', beetSolana.publicKey],
-    ['authority', beetSolana.publicKey],
+    ['treasuryMint', beetMiraland.publicKey],
+    ['mintA', beetMiraland.publicKey],
+    ['mintB', beetMiraland.publicKey],
+    ['tokenAEscrow', beetMiraland.publicKey],
+    ['tokenBEscrow', beetMiraland.publicKey],
+    ['authority', beetMiraland.publicKey],
     ['bump', beet.u8],
     ['tokenAEscrowBump', beet.u8],
     ['tokenBEscrowBump', beet.u8],

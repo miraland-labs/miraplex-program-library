@@ -5,10 +5,10 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as splToken from '@solana/spl-token';
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as splToken from '@solarti/solarti-token';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * @category Instructions
@@ -37,7 +37,7 @@ const claimStruct = new beet.FixableBeetArgsStruct<
     ['bump', beet.u8],
     ['index', beet.u64],
     ['amount', beet.u64],
-    ['claimantSecret', beetSolana.publicKey],
+    ['claimantSecret', beetMiraland.publicKey],
     ['proof', beet.array(beet.uniformFixedSizeArray(beet.u8, 32))],
   ],
   'ClaimInstructionArgs',

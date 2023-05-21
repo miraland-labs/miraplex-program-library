@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 export type GatekeeperConfig = {
   gatekeeperNetwork: web3.PublicKey;
   expireOnUse: boolean;
@@ -19,7 +19,7 @@ export type GatekeeperConfig = {
  */
 export const gatekeeperConfigBeet = new beet.BeetArgsStruct<GatekeeperConfig>(
   [
-    ['gatekeeperNetwork', beetSolana.publicKey],
+    ['gatekeeperNetwork', beetMiraland.publicKey],
     ['expireOnUse', beet.bool],
   ],
   'GatekeeperConfig',

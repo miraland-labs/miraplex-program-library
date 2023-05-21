@@ -1,10 +1,10 @@
-import { Account, Connection, Keypair, LAMPORTS_PER_MLN } from '@solana/web3.js';
+import { Account, Connection, Keypair, LAMPORTS_PER_MLN } from '@solarti/web3.js';
 import { NodeWallet } from '@project-serum/common'; //TODO remove this
-import { NATIVE_MINT, Token, TOKEN_PROGRAM_ID } from '@solana/spl-token';
+import { NATIVE_MINT, Token, TOKEN_PROGRAM_ID } from '@solarti/solarti-token';
 import { expect, use } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
 import { Fanout, FanoutClient, FanoutMembershipVoucher, FanoutMint, MembershipModel } from '../src';
-import { LOCALHOST } from '@metaplex-foundation/amman';
+import { LOCALHOST } from '@miraplex/amman';
 import { builtWalletFanout } from './utils/scenarios';
 
 use(ChaiAsPromised);

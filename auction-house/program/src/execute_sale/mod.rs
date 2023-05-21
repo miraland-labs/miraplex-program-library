@@ -55,7 +55,7 @@ pub struct ExecuteSale<'info> {
     pub escrow_payment_account: UncheckedAccount<'info>,
 
     /// CHECK: Validated in execute_sale_logic.
-    /// Seller SOL or SPL account to receive payment at.
+    /// Seller MLN or SPL account to receive payment at.
     #[account(mut)]
     pub seller_payment_receipt_account: UncheckedAccount<'info>,
 
@@ -290,7 +290,7 @@ pub struct ExecutePartialSale<'info> {
     pub escrow_payment_account: UncheckedAccount<'info>,
 
     /// CHECK: Validated in execute_sale_logic.
-    /// Seller SOL or SPL account to receive payment at.
+    /// Seller MLN or SPL account to receive payment at.
     #[account(mut)]
     pub seller_payment_receipt_account: UncheckedAccount<'info>,
 
@@ -528,7 +528,7 @@ pub struct AuctioneerExecuteSale<'info> {
     pub escrow_payment_account: UncheckedAccount<'info>,
 
     /// CHECK: Validated in execute_sale_logic.
-    /// Seller SOL or SPL account to receive payment at.
+    /// Seller MLN or SPL account to receive payment at.
     #[account(mut)]
     pub seller_payment_receipt_account: UncheckedAccount<'info>,
 
@@ -764,7 +764,7 @@ pub struct AuctioneerExecutePartialSale<'info> {
     pub escrow_payment_account: UncheckedAccount<'info>,
 
     /// CHECK: Validated in execute_sale_logic.
-    /// Seller SOL or SPL account to receive payment at.
+    /// Seller MLN or SPL account to receive payment at.
     #[account(mut)]
     pub seller_payment_receipt_account: UncheckedAccount<'info>,
 

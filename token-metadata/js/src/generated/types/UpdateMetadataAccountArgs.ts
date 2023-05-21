@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Data, dataBeet } from './Data';
 export type UpdateMetadataAccountArgs = {
   data: beet.COption<Data>;
@@ -23,7 +23,7 @@ export const updateMetadataAccountArgsBeet =
   new beet.FixableBeetArgsStruct<UpdateMetadataAccountArgs>(
     [
       ['data', beet.coption(dataBeet)],
-      ['updateAuthority', beet.coption(beetSolana.publicKey)],
+      ['updateAuthority', beet.coption(beetMiraland.publicKey)],
       ['primarySaleHappened', beet.coption(beet.bool)],
     ],
     'UpdateMetadataAccountArgs',

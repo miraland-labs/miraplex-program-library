@@ -3,7 +3,7 @@
 const path = require('path');
 
 const localDeployDir = path.join(__dirname, 'test-programs');
-const { LOCALHOST, tmpLedgerDir } = require('@metaplex-foundation/amman');
+const { LOCALHOST, tmpLedgerDir } = require('@miraplex/amman');
 
 function localDeployPath(programName) {
   return path.join(localDeployDir, `${programName}.so`);
@@ -22,7 +22,7 @@ const programs = {
   },
   candy_machine: {
     label: 'Candy Machine',
-    programId: 'cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ',
+    programId: 'CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333',
     deployPath: localDeployPath('mpl_candy_machine'),
   },
   hydra: {
@@ -32,7 +32,7 @@ const programs = {
   },
   candy_machine_core: {
     label: 'Candy Machine Core',
-    programId: 'CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR',
+    programId: 'CMv3YQQ7nbhFUjArAcGuRcDa6avoYN1a72HRZMvJ6WnU',
     deployPath: localDeployPath('mpl_candy_machine_core'),
   },
   token_auth_rules: {

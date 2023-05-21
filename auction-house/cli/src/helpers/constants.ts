@@ -1,4 +1,4 @@
-import { PublicKey, clusterApiUrl } from '@solana/web3.js';
+import { PublicKey, clusterApiUrl } from '@solarti/web3.js';
 export const CANDY_MACHINE = 'candy_machine';
 export const AUCTION_HOUSE = 'auction_house';
 export const TOKEN_ENTANGLER = 'token_entangler';
@@ -20,7 +20,7 @@ export const CANDY_MACHINE_PROGRAM_ID = new PublicKey(
 );
 
 export const CANDY_MACHINE_PROGRAM_V2_ID = new PublicKey(
-  'cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ',
+  'CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333',
 );
 export const TOKEN_METADATA_PROGRAM_ID = new PublicKey(
   'Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv',

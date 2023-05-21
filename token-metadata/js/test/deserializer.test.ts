@@ -3,8 +3,8 @@ import spok, { Specifications } from 'spok';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { Key, Metadata, metadataBeet, TokenStandard, UseMethod } from '../src/mpl-token-metadata';
-import { PublicKey } from '@solana/web3.js';
-import { bignum } from '@metaplex-foundation/beet';
+import { PublicKey } from '@solarti/web3.js';
+import { bignum } from '@miraplex/beet';
 
 const fixtures = path.join(__dirname, 'fixtures');
 

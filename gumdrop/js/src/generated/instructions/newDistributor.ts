@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * @category Instructions
@@ -33,7 +33,7 @@ const newDistributorStruct = new beet.BeetArgsStruct<
     ['instructionDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
     ['bump', beet.u8],
     ['root', beet.uniformFixedSizeArray(beet.u8, 32)],
-    ['temporal', beetSolana.publicKey],
+    ['temporal', beetMiraland.publicKey],
   ],
   'NewDistributorInstructionArgs',
 );

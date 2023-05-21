@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Key, keyBeet } from '../types/Key';
 import { TokenState, tokenStateBeet } from '../types/TokenState';
 import { TokenDelegateRole, tokenDelegateRoleBeet } from '../types/TokenDelegateRole';
@@ -91,7 +91,7 @@ export class TokenRecord implements TokenRecordArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, tokenRecordBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, tokenRecordBeet);
   }
 
   /**
@@ -164,7 +164,7 @@ export const tokenRecordBeet = new beet.FixableBeetStruct<TokenRecord, TokenReco
     ['bump', beet.u8],
     ['state', tokenStateBeet],
     ['ruleSetRevision', beet.coption(beet.u64)],
-    ['delegate', beet.coption(beetSolana.publicKey)],
+    ['delegate', beet.coption(beetMiraland.publicKey)],
     ['delegateRole', beet.coption(tokenDelegateRoleBeet)],
   ],
   TokenRecord.fromArgs,

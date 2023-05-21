@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link ClaimCount}
@@ -135,7 +135,7 @@ export const claimCountBeet = new beet.BeetStruct<
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
     ['count', beet.u64],
-    ['claimant', beetSolana.publicKey],
+    ['claimant', beetMiraland.publicKey],
   ],
   ClaimCount.fromArgs,
   'ClaimCount',

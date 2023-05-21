@@ -4,7 +4,7 @@ import {
   LoadOrGenKeypair,
   LOCALHOST,
   PayerTransactionHandler,
-} from '@metaplex-foundation/amman-client';
+} from '@miraplex/amman-client';
 import {
   Connection,
   Keypair,
@@ -13,14 +13,14 @@ import {
   SYSVAR_SLOT_HASHES_PUBKEY,
   Transaction,
   TransactionInstruction,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import {
   createAssociatedTokenAccountInstruction,
   createInitializeMintInstruction,
   createMintToInstruction,
   MintLayout,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import { Test } from 'tape';
 import * as program from '../../src/generated';
 import { CandyMachine, CandyMachineData } from '../../src/generated';
@@ -35,7 +35,7 @@ import {
   keypairIdentity,
   Metaplex,
   NftWithToken,
-} from '@metaplex-foundation/js';
+} from '@metaplex-solarti/js';
 
 const METAPLEX_PROGRAM_ID = new PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv');
 

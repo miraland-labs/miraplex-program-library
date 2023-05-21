@@ -1,12 +1,12 @@
-import { Connection, Keypair, PublicKey } from '@solana/web3.js';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
+import { Connection, Keypair, PublicKey } from '@solarti/web3.js';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
 import {
   createCreateMasterEditionV3Instruction,
   Creator,
   DataV2,
   createCreateMetadataAccountV2Instruction,
-} from '@metaplex-foundation/mpl-token-metadata';
-import { createMintToInstruction } from '@solana/spl-token';
+} from '@miraplex/miraplex-token-metadata';
+import { createMintToInstruction } from '@solarti/solarti-token';
 import { strict as assert } from 'assert';
 
 import { createTokenAccount } from '../transactions/createTokenAccount';

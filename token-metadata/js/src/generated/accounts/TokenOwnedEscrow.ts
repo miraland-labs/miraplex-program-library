@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 import { Key, keyBeet } from '../types/Key';
 import { EscrowAuthority, escrowAuthorityBeet } from '../types/EscrowAuthority';
 
@@ -82,7 +82,7 @@ export class TokenOwnedEscrow implements TokenOwnedEscrowArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, tokenOwnedEscrowBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, tokenOwnedEscrowBeet);
   }
 
   /**
@@ -156,7 +156,7 @@ export const tokenOwnedEscrowBeet = new beet.FixableBeetStruct<
 >(
   [
     ['key', keyBeet],
-    ['baseToken', beetSolana.publicKey],
+    ['baseToken', beetMiraland.publicKey],
     ['authority', escrowAuthorityBeet],
     ['bump', beet.u8],
   ],

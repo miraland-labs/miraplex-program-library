@@ -24,7 +24,7 @@ async fn withdraw_success() {
     let owner_pubkey = &test_metadata.token.pubkey();
 
     let airdrop_amount = 2_000_000_000;
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, airdrop_amount)
         .await
         .unwrap();
@@ -120,7 +120,7 @@ async fn withdraw_insufficient_funds_fails() {
     let owner_pubkey = &test_metadata.token.pubkey();
 
     let airdrop_amount = 2_000_000_000;
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, airdrop_amount)
         .await
         .unwrap();
@@ -209,7 +209,7 @@ async fn withdraw_extra_and_adjusted_for_rent_shortfall_success() {
     let owner_pubkey = &test_metadata.token.pubkey();
 
     let airdrop_amount = 2_000_000_000;
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, airdrop_amount)
         .await
         .unwrap();
@@ -305,7 +305,7 @@ async fn auctioneer_withdraw_success() {
     let owner_pubkey = &test_metadata.token.pubkey();
 
     let airdrop_amount = 10_000_000_000;
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, airdrop_amount)
         .await
         .unwrap();
@@ -417,7 +417,7 @@ async fn auctioneer_withdraw_missing_scope_fails() {
     let test_metadata = Metadata::new();
     let owner_pubkey = &test_metadata.token.pubkey();
 
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, 10_000_000_000)
         .await
         .unwrap();
@@ -511,7 +511,7 @@ async fn auctioneer_withdraw_no_delegate_fails() {
     let test_metadata = Metadata::new();
     let owner_pubkey = &test_metadata.token.pubkey();
 
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, 10_000_000_000)
         .await
         .unwrap();

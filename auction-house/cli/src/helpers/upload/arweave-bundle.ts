@@ -8,7 +8,7 @@ import { signers, bundleAndSignData, createData, DataItem } from 'arbundles';
 import { ArweaveSigner, Signer } from 'arbundles/src/signing';
 import log from 'loglevel';
 import { StorageType } from '../storage-type';
-import { Keypair } from '@solana/web3.js';
+import { Keypair } from '@solarti/web3.js';
 import { getType, getExtension } from 'mime';
 import { AssetKey } from '../../types';
 import { sleep } from '../various';
@@ -478,7 +478,7 @@ export async function* makeArweaveBundleUploadGenerator(
   const storageType: StorageType = storage;
   if (storageType === StorageType.ArweaveSol && !walletKeyPair) {
     throw new Error(
-      'To pay for uploads with SOL, you need to pass a Solana Keypair',
+      'To pay for uploads with MLN, you need to pass a Solana Keypair',
     );
   }
   if (storageType === StorageType.ArweaveBundle && !jwk) {
@@ -538,7 +538,7 @@ export async function* makeArweaveBundleUploadGenerator(
     const cost = await bundlr.utils.getPrice('solana', bytes);
     const bufferCost = cost.multipliedBy(3).dividedToIntegerBy(2);
     log.info(
-      `${bufferCost.toNumber() / LAMPORTS} SOL to upload ${sizeMB(
+      `${bufferCost.toNumber() / LAMPORTS} MLN to upload ${sizeMB(
         bytes,
       )}MB with buffer`,
     );
@@ -723,13 +723,13 @@ export const withdrawBundlr = async (walletKeyPair: Keypair) => {
     log.error(
       `Error: Balance in Bundlr node (${balance.dividedBy(
         LAMPORTS,
-      )} SOL) is too low to withdraw.`,
+      )} MLN) is too low to withdraw.`,
     );
   } else {
     log.info(
       `Requesting a withdrawal of ${balance
         .minus(5000)
-        .dividedBy(LAMPORTS)} SOL from Bundlr...`,
+        .dividedBy(LAMPORTS)} MLN from Bundlr...`,
     );
     try {
       const withdrawResponse = await bundlr.withdrawBalance(
@@ -739,7 +739,7 @@ export const withdrawBundlr = async (walletKeyPair: Keypair) => {
         log.info(
           `Successfully withdrew ${
             withdrawResponse.data.final / LAMPORTS
-          } SOL.`,
+          } MLN.`,
         );
       } else if (withdrawResponse.status == 400) {
         log.info(withdrawResponse.data);

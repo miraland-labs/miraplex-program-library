@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { MetadataArgs, metadataArgsBeet } from '../types/MetadataArgs';
 
 /**
@@ -42,7 +42,7 @@ export const setAndVerifyCollectionStruct = new beet.FixableBeetArgsStruct<
     ['nonce', beet.u64],
     ['index', beet.u32],
     ['message', metadataArgsBeet],
-    ['collection', beetSolana.publicKey],
+    ['collection', beetMiraland.publicKey],
   ],
   'SetAndVerifyCollectionInstructionArgs',
 );

@@ -1,5 +1,5 @@
-import { Connection, Keypair, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solana/web3.js';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
+import { Connection, Keypair, Transaction, SYSVAR_CLOCK_PUBKEY } from '@solarti/web3.js';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
 import { createAndSignTransaction } from '../utils';
 import { createCloseMarketInstruction } from '../../src/generated/instructions';
 

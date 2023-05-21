@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 
 /**
  * Arguments used to create {@link CollectionPDA}
@@ -57,8 +57,9 @@ export class CollectionPDA implements CollectionPDAArgs {
   static async fromAccountAddress(
     connection: web3.Connection,
     address: web3.PublicKey,
+    commitmentOrConfig?: web3.Commitment | web3.GetAccountInfoConfig,
   ): Promise<CollectionPDA> {
-    const accountInfo = await connection.getAccountInfo(address);
+    const accountInfo = await connection.getAccountInfo(address, commitmentOrConfig);
     if (accountInfo == null) {
       throw new Error(`Unable to find CollectionPDA account at ${address}`);
     }
@@ -72,9 +73,9 @@ export class CollectionPDA implements CollectionPDAArgs {
    * @param programId - the program that owns the accounts we are filtering
    */
   static gpaBuilder(
-    programId: web3.PublicKey = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+    programId: web3.PublicKey = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, collectionPDABeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, collectionPDABeet);
   }
 
   /**
@@ -149,8 +150,8 @@ export const collectionPDABeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['mint', beetSolana.publicKey],
-    ['candyMachine', beetSolana.publicKey],
+    ['mint', beetMiraland.publicKey],
+    ['candyMachine', beetMiraland.publicKey],
   ],
   CollectionPDA.fromArgs,
   'CollectionPDA',

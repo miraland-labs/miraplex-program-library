@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { MigrationType, migrationTypeBeet } from './MigrationType';
 /**
  * This type is used to derive the {@link MigrateArgs} type as well as the de/serializer.
@@ -48,7 +48,7 @@ export const migrateArgsBeet = beet.dataEnum<MigrateArgsRecord>([
     new beet.FixableBeetArgsStruct<MigrateArgsRecord['V1']>(
       [
         ['migrationType', migrationTypeBeet],
-        ['ruleSet', beet.coption(beetSolana.publicKey)],
+        ['ruleSet', beet.coption(beetMiraland.publicKey)],
       ],
       'MigrateArgsRecord["V1"]',
     ),

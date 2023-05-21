@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as splToken from '@solana/spl-token';
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as solartiToken from '@solarti/solarti-token';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 
 /**
  * @category Instructions
@@ -70,6 +70,7 @@ export type MintNftInstructionAccounts = {
   clock: web3.PublicKey;
   recentBlockhashes: web3.PublicKey;
   instructionSysvarAccount: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const mintNftInstructionDiscriminator = [211, 57, 6, 167, 15, 219, 35, 251];
@@ -87,7 +88,7 @@ export const mintNftInstructionDiscriminator = [211, 57, 6, 167, 15, 219, 35, 25
 export function createMintNftInstruction(
   accounts: MintNftInstructionAccounts,
   args: MintNftInstructionArgs,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = mintNftStruct.serialize({
     instructionDiscriminator: mintNftInstructionDiscriminator,
@@ -145,7 +146,7 @@ export function createMintNftInstruction(
       isSigner: false,
     },
     {
-      pubkey: accounts.tokenProgram ?? splToken.TOKEN_PROGRAM_ID,
+      pubkey: accounts.tokenProgram ?? solartiToken.TOKEN_PROGRAM_ID,
       isWritable: false,
       isSigner: false,
     },
@@ -175,6 +176,12 @@ export function createMintNftInstruction(
       isSigner: false,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

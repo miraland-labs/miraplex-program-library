@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 
 /**
  * Arguments used to create {@link Store}
@@ -77,7 +77,7 @@ export class Store implements StoreArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('SaLeTjyUa5wXHnGuewUSyJ5JWZaHwz3TxqUntCE9czo'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, storeBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, storeBeet);
   }
 
   /**
@@ -155,7 +155,7 @@ export const storeBeet = new beet.FixableBeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['admin', beetSolana.publicKey],
+    ['admin', beetMiraland.publicKey],
     ['name', beet.utf8String],
     ['description', beet.utf8String],
   ],

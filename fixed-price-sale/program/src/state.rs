@@ -5,7 +5,7 @@ use anchor_lang::prelude::*;
 use mpl_token_metadata::state::Creator as MPL_Creator;
 use std::convert::From;
 
-// by system acc I mean account to hold only native SOL
+// by system acc I mean account to hold only native MLN
 pub const MINIMUM_BALANCE_FOR_SYSTEM_ACCS: u64 = 890880;
 
 #[account]

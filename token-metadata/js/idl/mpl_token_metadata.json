@@ -1,5 +1,5 @@
 {
-  "version": "1.7.0-beta.2",
+  "version": "1.7.1",
   "name": "mpl_token_metadata",
   "instructions": [
     {
@@ -6154,7 +6154,7 @@
   "metadata": {
     "origin": "shank",
     "address": "Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv",
-    "binaryVersion": "0.0.11",
-    "libVersion": "0.0.11"
+    "binaryVersion": "0.0.12",
+    "libVersion": "0.0.12"
   }
 }

@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Key, keyBeet } from '../types/Key';
 
 /**
@@ -79,7 +79,7 @@ export class CollectionAuthorityRecord implements CollectionAuthorityRecordArgs 
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, collectionAuthorityRecordBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, collectionAuthorityRecordBeet);
   }
 
   /**
@@ -153,7 +153,7 @@ export const collectionAuthorityRecordBeet = new beet.FixableBeetStruct<
   [
     ['key', keyBeet],
     ['bump', beet.u8],
-    ['updateAuthority', beet.coption(beetSolana.publicKey)],
+    ['updateAuthority', beet.coption(beetMiraland.publicKey)],
   ],
   CollectionAuthorityRecord.fromArgs,
   'CollectionAuthorityRecord',

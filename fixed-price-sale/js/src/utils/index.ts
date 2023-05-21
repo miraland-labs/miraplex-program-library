@@ -1,6 +1,6 @@
-import { Connection, PublicKey } from '@solana/web3.js';
+import { Connection, PublicKey } from '@solarti/web3.js';
 import { PROGRAM_ID } from '../generated';
-import { Account as TokenAccount } from '@solana/spl-token';
+import { Account as TokenAccount } from '@solarti/solarti-token';
 import { assertNft, assertNftPrintEdition, Metaplex } from '@metaplex-foundation/js';
 
 const VAULT_OWNER_PREFIX = 'mt_vault';

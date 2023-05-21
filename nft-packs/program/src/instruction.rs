@@ -232,7 +232,7 @@ pub enum NFTPacksInstruction {
 
     /// DeletePack
     ///
-    /// Transfer all the SOL from pack set account to refunder account and thus remove it.
+    /// Transfer all the MLN from pack set account to refunder account and thus remove it.
     ///
     #[account(0, writable, name = "pack_set")]
     #[account(1, signer, name = "authority")]
@@ -241,7 +241,7 @@ pub enum NFTPacksInstruction {
 
     /// DeletePackCard
     ///
-    /// Transfer all the SOL from pack card account to refunder account and thus remove it.
+    /// Transfer all the MLN from pack card account to refunder account and thus remove it.
     /// Also transfer master token to new owner.
     ///
     #[account(0, writable, name = "pack_set")]
@@ -257,7 +257,7 @@ pub enum NFTPacksInstruction {
 
     /// DeletePackVoucher
     ///
-    /// Transfer all the SOL from pack voucher account to refunder account and thus remove it.
+    /// Transfer all the MLN from pack voucher account to refunder account and thus remove it.
     ///
     #[account(0, writable, name = "pack_set")]
     #[account(1, writable, name = "pack_voucher")]
@@ -314,7 +314,7 @@ pub enum NFTPacksInstruction {
 
     /// Delete PackConfig account
     ///
-    /// Transfer all the SOL from pack card account to refunder account and thus remove it.
+    /// Transfer all the MLN from pack card account to refunder account and thus remove it.
     ///
     #[account(0, name = "pack_set")]
     #[account(1, writable, name = "pack_config", desc = "PDA, ['config', pack]")]

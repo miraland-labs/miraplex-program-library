@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 /**
  * This type is used to derive the {@link RuleSetToggle} type as well as the de/serializer.
  * However don't refer to it in your code but use the {@link RuleSetToggle} type instead.
@@ -53,7 +53,7 @@ export const ruleSetToggleBeet = beet.dataEnum<RuleSetToggleRecord>([
   [
     'Set',
     new beet.BeetArgsStruct<RuleSetToggleRecord['Set']>(
-      [['fields', beet.fixedSizeTuple([beetSolana.publicKey])]],
+      [['fields', beet.fixedSizeTuple([beetMiraland.publicKey])]],
       'RuleSetToggleRecord["Set"]',
     ),
   ],

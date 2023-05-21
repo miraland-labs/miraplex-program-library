@@ -20,7 +20,7 @@ pub struct AuctioneerDeposit<'info> {
     pub wallet: Signer<'info>,
 
     /// CHECK: Verified through CPI
-    /// User SOL or SPL account to transfer funds from.
+    /// User MLN or SPL account to transfer funds from.
     #[account(mut)]
     pub payment_account: UncheckedAccount<'info>,
 

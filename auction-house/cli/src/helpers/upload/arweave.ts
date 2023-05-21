@@ -1,4 +1,4 @@
-import * as anchor from '@project-serum/anchor';
+import * as anchor from '@solarti/anchor';
 import FormData from 'form-data';
 import fs from 'fs';
 import path from 'path';

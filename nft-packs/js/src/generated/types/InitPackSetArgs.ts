@@ -5,7 +5,7 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
+import * as beet from '@miraplex/beet';
 import { PackDistributionType, packDistributionTypeBeet } from './PackDistributionType';
 export type InitPackSetArgs = {
   name: number[] /* size: 32 */;

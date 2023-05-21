@@ -5,7 +5,7 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
+import * as beet from '@miraplex/beet';
 export type EditPackSetArgs = {
   name: beet.COption<number[] /* size: 32 */>;
   description: beet.COption<string>;

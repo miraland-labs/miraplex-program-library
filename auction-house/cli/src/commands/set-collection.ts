@@ -1,4 +1,4 @@
-import { PublicKey, SystemProgram } from '@solana/web3.js';
+import { PublicKey, SystemProgram } from '@solarti/web3.js';
 import {
   getCollectionAuthorityRecordPDA,
   getCollectionPDA,
@@ -6,22 +6,22 @@ import {
   getMetadata,
 } from '../helpers/accounts';
 import { TOKEN_METADATA_PROGRAM_ID } from '../helpers/constants';
-import * as anchor from '@project-serum/anchor';
+import * as anchor from '@solarti/anchor';
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   TOKEN_PROGRAM_ID,
   MintLayout,
   Token,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import { sendTransactionWithRetryWithKeypair } from '../helpers/transactions';
 import {
   CreateMasterEditionV3,
   CreateMetadataV2,
   Creator,
   DataV2,
-} from '@metaplex-foundation/mpl-token-metadata';
+} from '@miraplex/miraplex-token-metadata';
 import log from 'loglevel';
-import { Program } from '@project-serum/anchor';
+import { Program } from '@solarti/anchor';
 import { parseCollectionMintPubkey } from '../helpers/various';
 
 export async function setCollection(

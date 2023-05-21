@@ -1,4 +1,4 @@
-import { PublicKey } from '@solana/web3.js';
+import { PublicKey } from '@solarti/web3.js';
 export * from './accounts';
 export * from './errors';
 export * from './instructions';
@@ -10,7 +10,7 @@ export * from './types';
  * @category constants
  * @category generated
  */
-export const PROGRAM_ADDRESS = 'cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ';
+export const PROGRAM_ADDRESS = 'CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333';
 
 /**
  * Program public key

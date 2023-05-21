@@ -1,7 +1,7 @@
-import { PublicKey, Keypair } from '@solana/web3.js';
-import * as anchor from '@project-serum/anchor';
+import { PublicKey, Keypair } from '@solarti/web3.js';
+import * as anchor from '@solarti/anchor';
 import { sendTransactionWithRetryWithKeypair } from '../helpers/transactions';
-import { Program } from '@project-serum/anchor';
+import { Program } from '@solarti/anchor';
 
 export async function withdraw(
   anchorProgram: Program,

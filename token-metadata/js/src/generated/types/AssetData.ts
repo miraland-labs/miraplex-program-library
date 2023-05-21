@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Creator, creatorBeet } from './Creator';
 import { TokenStandard, tokenStandardBeet } from './TokenStandard';
 import { Collection, collectionBeet } from './Collection';
@@ -45,7 +45,7 @@ export const assetDataBeet = new beet.FixableBeetArgsStruct<AssetData>(
     ['collection', beet.coption(collectionBeet)],
     ['uses', beet.coption(usesBeet)],
     ['collectionDetails', beet.coption(collectionDetailsBeet)],
-    ['ruleSet', beet.coption(beetSolana.publicKey)],
+    ['ruleSet', beet.coption(beetMiraland.publicKey)],
   ],
   'AssetData',
 );

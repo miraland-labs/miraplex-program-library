@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Connection, Keypair } from '@solana/web3.js';
+import { Connection, Keypair } from '@solarti/web3.js';
 import {
   NATIVE_MINT,
   ASSOCIATED_TOKEN_PROGRAM_ID,
   Token,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import { expect, use } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
 import {
@@ -16,10 +16,10 @@ import {
   FanoutMint,
   MembershipModel,
 } from '../src';
-import { LOCALHOST } from '@metaplex-foundation/amman';
+import { LOCALHOST } from '@miraplex/amman';
 import { builtNftFanout } from './utils/scenarios';
 import { keypairIdentity, Metaplex } from '@metaplex-foundation/js';
-import { Wallet } from '@project-serum/anchor';
+import { Wallet } from '@solarti/anchor';
 
 use(ChaiAsPromised);
 

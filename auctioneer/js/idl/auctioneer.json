@@ -67,7 +67,7 @@
           "isMut": true,
           "isSigner": false,
           "docs": [
-            "SPL token account or native SOL account to transfer funds to. If the account is a native SOL account, this is the same as the wallet address."
+            "SPL token account or native MLN account to transfer funds to. If the account is a native MLN account, this is the same as the wallet address."
           ]
         },
         {
@@ -189,7 +189,7 @@
           "isMut": true,
           "isSigner": false,
           "docs": [
-            "User SOL or SPL account to transfer funds from."
+            "User MLN or SPL account to transfer funds from."
           ]
         },
         {
@@ -493,7 +493,7 @@
           "isMut": true,
           "isSigner": false,
           "docs": [
-            "Seller SOL or SPL account to receive payment at."
+            "Seller MLN or SPL account to receive payment at."
           ]
         },
         {
@@ -820,7 +820,7 @@
     {
       "name": "buy",
       "docs": [
-        "Create a private buy bid by creating a `buyer_trade_state` account and an `escrow_payment` account and funding the escrow with the necessary SOL or SPL token amount."
+        "Create a private buy bid by creating a `buyer_trade_state` account and an `escrow_payment` account and funding the escrow with the necessary MLN or SPL token amount."
       ],
       "accounts": [
         {
@@ -860,7 +860,7 @@
           "isMut": true,
           "isSigner": false,
           "docs": [
-            "User SOL or SPL account to transfer funds from."
+            "User MLN or SPL account to transfer funds from."
           ]
         },
         {

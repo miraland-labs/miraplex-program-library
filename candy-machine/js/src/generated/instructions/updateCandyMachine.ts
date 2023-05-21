@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 import { CandyMachineData, candyMachineDataBeet } from '../types/CandyMachineData';
 
 /**
@@ -47,6 +47,7 @@ export type UpdateCandyMachineInstructionAccounts = {
   candyMachine: web3.PublicKey;
   authority: web3.PublicKey;
   wallet: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const updateCandyMachineInstructionDiscriminator = [243, 251, 124, 156, 211, 211, 118, 239];
@@ -64,7 +65,7 @@ export const updateCandyMachineInstructionDiscriminator = [243, 251, 124, 156, 2
 export function createUpdateCandyMachineInstruction(
   accounts: UpdateCandyMachineInstructionAccounts,
   args: UpdateCandyMachineInstructionArgs,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = updateCandyMachineStruct.serialize({
     instructionDiscriminator: updateCandyMachineInstructionDiscriminator,
@@ -87,6 +88,12 @@ export function createUpdateCandyMachineInstruction(
       isSigner: false,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

@@ -1,7 +1,7 @@
 import test from 'tape';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
-import { Connection, Keypair, PublicKey } from '@solana/web3.js';
-import { Creator } from '@metaplex-foundation/mpl-token-metadata';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
+import { Connection, Keypair, PublicKey } from '@solarti/web3.js';
+import { Creator } from '@miraplex/miraplex-token-metadata';
 
 import { findVaultOwnerAddress } from '../../src/utils';
 

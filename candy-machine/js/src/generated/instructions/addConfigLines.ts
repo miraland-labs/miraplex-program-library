@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 import { ConfigLine, configLineBeet } from '../types/ConfigLine';
 
 /**
@@ -47,6 +47,7 @@ export const addConfigLinesStruct = new beet.FixableBeetArgsStruct<
 export type AddConfigLinesInstructionAccounts = {
   candyMachine: web3.PublicKey;
   authority: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const addConfigLinesInstructionDiscriminator = [223, 50, 224, 227, 151, 8, 115, 106];
@@ -64,7 +65,7 @@ export const addConfigLinesInstructionDiscriminator = [223, 50, 224, 227, 151, 8
 export function createAddConfigLinesInstruction(
   accounts: AddConfigLinesInstructionAccounts,
   args: AddConfigLinesInstructionArgs,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = addConfigLinesStruct.serialize({
     instructionDiscriminator: addConfigLinesInstructionDiscriminator,
@@ -82,6 +83,12 @@ export function createAddConfigLinesInstruction(
       isSigner: true,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

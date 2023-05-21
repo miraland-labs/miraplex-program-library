@@ -7,7 +7,7 @@ pub const EXPIRE_OFFSET: i64 = 10 * 60;
 pub const PREFIX: &str = "candy_machine";
 
 pub const BOT_FEE: u64 = 10000000;
-pub const FREEZE_FEE: u64 = 0; //100000; // 0.0001 SOL
+pub const FREEZE_FEE: u64 = 0; //100000; // 0.0001 MLN
 
 pub const MAX_FREEZE_TIME: i64 = 60 * 60 * 24 * 31; // 1 month
 

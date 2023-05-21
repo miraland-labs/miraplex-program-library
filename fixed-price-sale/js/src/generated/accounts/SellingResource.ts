@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { SellingResourceState, sellingResourceStateBeet } from '../types/SellingResourceState';
 
 /**
@@ -100,7 +100,7 @@ export class SellingResource implements SellingResourceArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('SaLeTjyUa5wXHnGuewUSyJ5JWZaHwz3TxqUntCE9czo'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, sellingResourceBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, sellingResourceBeet);
   }
 
   /**
@@ -193,11 +193,11 @@ export const sellingResourceBeet = new beet.FixableBeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['store', beetSolana.publicKey],
-    ['owner', beetSolana.publicKey],
-    ['resource', beetSolana.publicKey],
-    ['vault', beetSolana.publicKey],
-    ['vaultOwner', beetSolana.publicKey],
+    ['store', beetMiraland.publicKey],
+    ['owner', beetMiraland.publicKey],
+    ['resource', beetMiraland.publicKey],
+    ['vault', beetMiraland.publicKey],
+    ['vaultOwner', beetMiraland.publicKey],
     ['supply', beet.u64],
     ['maxSupply', beet.coption(beet.u64)],
     ['state', sellingResourceStateBeet],

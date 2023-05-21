@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { AccountType, accountTypeBeet } from '../types/AccountType';
 import { PackSetState, packSetStateBeet } from '../types/PackSetState';
 import { PackDistributionType, packDistributionTypeBeet } from '../types/PackDistributionType';
@@ -120,7 +120,7 @@ export class PackSet implements PackSetArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('packFeFNZzMfD9aVWL7QbGz1WcU7R9zpf6pvNsw2BLu'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, packSetBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, packSetBeet);
   }
 
   /**
@@ -230,8 +230,8 @@ export class PackSet implements PackSetArgs {
 export const packSetBeet = new beet.FixableBeetStruct<PackSet, PackSetArgs>(
   [
     ['accountType', accountTypeBeet],
-    ['store', beetSolana.publicKey],
-    ['authority', beetSolana.publicKey],
+    ['store', beetMiraland.publicKey],
+    ['authority', beetMiraland.publicKey],
     ['description', beet.utf8String],
     ['uri', beet.utf8String],
     ['name', beet.uniformFixedSizeArray(beet.u8, 32)],

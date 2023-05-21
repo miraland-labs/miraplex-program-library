@@ -4,8 +4,8 @@ import {
   LoadOrGenKeypair,
   LOCALHOST,
   PayerTransactionHandler,
-} from '@metaplex-foundation/amman-client';
-import * as splToken from '@solana/spl-token';
+} from '@miraplex/amman-client';
+import * as splToken from '@solarti/solarti-token';
 import {
   Connection,
   Keypair,
@@ -14,7 +14,7 @@ import {
   SYSVAR_INSTRUCTIONS_PUBKEY,
   Transaction,
   TransactionInstruction,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import {
   AssetData,
   createCreateInstruction,
@@ -61,14 +61,14 @@ import {
   CreateOrUpdateInstructionArgs,
   createCreateOrUpdateInstruction,
   PROGRAM_ID as TOKEN_AUTH_RULES_ID,
-} from '@metaplex-foundation/mpl-token-auth-rules';
+} from '@miraplex/miraplex-token-auth-rules';
 import {
   ACCOUNT_SIZE,
   createInitializeAccountInstruction,
   createInitializeMintInstruction,
   MintLayout,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import { findTokenRecordPda } from '../utils/programmable';
 
 export class InitTransactions {

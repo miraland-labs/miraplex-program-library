@@ -72,7 +72,7 @@ pub struct AuctioneerExecuteSale<'info> {
     pub escrow_payment_account: UncheckedAccount<'info>,
 
     /// CHECK: Verified through CPI
-    /// Seller SOL or SPL account to receive payment at.
+    /// Seller MLN or SPL account to receive payment at.
     #[account(mut)]
     pub seller_payment_receipt_account: UncheckedAccount<'info>,
 

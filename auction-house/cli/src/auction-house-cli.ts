@@ -14,9 +14,9 @@ import {
   loadAuctionHouseProgram,
   loadWalletKey,
 } from './helpers/accounts';
-import { BN, web3 } from '@project-serum/anchor';
+import { BN, web3 } from '@solarti/anchor';
 import { TOKEN_PROGRAM_ID, WRAPPED_SOL_MINT } from './helpers/constants';
-import { ASSOCIATED_TOKEN_PROGRAM_ID, Token } from '@solana/spl-token';
+import { ASSOCIATED_TOKEN_PROGRAM_ID, Token } from '@solarti/solarti-token';
 import { getPriceWithMantissa } from './helpers/various';
 import { sendTransactionWithRetryWithKeypair } from './helpers/transactions';
 import { decodeMetadata, Metadata } from './helpers/schema';
@@ -348,7 +348,7 @@ programCommand('sell')
 programCommand('withdraw_from_treasury')
   .option(
     '-tm, --treasury-mint <string>',
-    'Optional. Mint address of treasury. If not used, default to SOL. Ignored if providing -ah arg',
+    'Optional. Mint address of treasury. If not used, default to MLN. Ignored if providing -ah arg',
   )
   .option(
     '-ah, --auction-house <string>',
@@ -365,7 +365,7 @@ programCommand('withdraw_from_treasury')
 
     let tMintKey;
     if (!treasuryMint) {
-      log.info('No treasury mint detected, using SOL.');
+      log.info('No treasury mint detected, using MLN.');
       tMintKey = WRAPPED_SOL_MINT;
     } else {
       tMintKey = new web3.PublicKey(treasuryMint);
@@ -432,7 +432,7 @@ programCommand('withdraw_from_treasury')
 programCommand('withdraw_from_fees')
   .option(
     '-tm, --treasury-mint <string>',
-    'Optional. Mint address of treasury. If not used, default to SOL. Ignored if providing -ah arg',
+    'Optional. Mint address of treasury. If not used, default to MLN. Ignored if providing -ah arg',
   )
   .option(
     '-ah, --auction-house <string>',
@@ -449,7 +449,7 @@ programCommand('withdraw_from_fees')
 
     let tMintKey;
     if (!treasuryMint) {
-      log.info('No treasury mint detected, using SOL.');
+      log.info('No treasury mint detected, using MLN.');
       tMintKey = WRAPPED_SOL_MINT;
     } else {
       tMintKey = new web3.PublicKey(treasuryMint);
@@ -1194,7 +1194,7 @@ programCommand('deposit')
 programCommand('show')
   .option(
     '-tm, --treasury-mint <string>',
-    'Optional. Mint address of treasury. If not used, default to SOL. Ignored if providing -ah arg',
+    'Optional. Mint address of treasury. If not used, default to MLN. Ignored if providing -ah arg',
   )
   .option(
     '-ah, --auction-house <string>',
@@ -1207,7 +1207,7 @@ programCommand('show')
     const anchorProgram = await loadAuctionHouseProgram(walletKeyPair, env);
     let tMintKey;
     if (!treasuryMint) {
-      log.info('No treasury mint detected, using SOL.');
+      log.info('No treasury mint detected, using MLN.');
       tMintKey = WRAPPED_SOL_MINT;
     } else {
       tMintKey = new web3.PublicKey(treasuryMint);
@@ -1281,7 +1281,7 @@ programCommand('show')
 programCommand('create_auction_house')
   .option(
     '-tm, --treasury-mint <string>',
-    'Mint address of treasury. If not used, default to SOL.',
+    'Mint address of treasury. If not used, default to MLN.',
   )
   .option(
     '-sfbp, --seller-fee-basis-points <string>',
@@ -1337,7 +1337,7 @@ programCommand('create_auction_house')
       fwdKey = new web3.PublicKey(feeWithdrawalDestination);
     }
     if (!treasuryMint) {
-      log.info('No treasury mint detected, using SOL.');
+      log.info('No treasury mint detected, using MLN.');
       tMintKey = WRAPPED_SOL_MINT;
     } else {
       tMintKey = new web3.PublicKey(treasuryMint);
@@ -1386,7 +1386,7 @@ programCommand('create_auction_house')
 programCommand('update_auction_house')
   .option(
     '-tm, --treasury-mint <string>',
-    'Mint address of treasury used during creation. If not used, default to SOL. Ignored if providing -ah arg',
+    'Mint address of treasury used during creation. If not used, default to MLN. Ignored if providing -ah arg',
   )
   .option(
     '-ah, --auction-house <string>',
@@ -1438,7 +1438,7 @@ programCommand('update_auction_house')
 
     let tMintKey: web3.PublicKey;
     if (!treasuryMint) {
-      log.info('No treasury mint detected, using SOL.');
+      log.info('No treasury mint detected, using MLN.');
       tMintKey = WRAPPED_SOL_MINT;
     } else {
       tMintKey = new web3.PublicKey(treasuryMint);

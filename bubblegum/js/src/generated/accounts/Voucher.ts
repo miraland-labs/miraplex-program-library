@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { LeafSchema, leafSchemaBeet } from '../types/LeafSchema';
 
 /**
@@ -78,7 +78,7 @@ export class Voucher implements VoucherArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, voucherBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, voucherBeet);
   }
 
   /**
@@ -158,7 +158,7 @@ export const voucherBeet = new beet.FixableBeetStruct<
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
     ['leafSchema', leafSchemaBeet],
     ['index', beet.u32],
-    ['merkleTree', beetSolana.publicKey],
+    ['merkleTree', beetMiraland.publicKey],
   ],
   Voucher.fromArgs,
   'Voucher',

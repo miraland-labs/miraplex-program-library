@@ -46,7 +46,7 @@ pub struct AuctioneerBuy<'info> {
     wallet: Signer<'info>,
 
     /// CHECK: Verified through CPI
-    /// User SOL or SPL account to transfer funds from.
+    /// User MLN or SPL account to transfer funds from.
     #[account(mut)]
     payment_account: UncheckedAccount<'info>,
 

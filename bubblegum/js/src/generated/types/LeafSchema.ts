@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 /**
  * This type is used to derive the {@link LeafSchema} type as well as the de/serializer.
  * However don't refer to it in your code but use the {@link LeafSchema} type instead.
@@ -53,9 +53,9 @@ export const leafSchemaBeet = beet.dataEnum<LeafSchemaRecord>([
     'V1',
     new beet.BeetArgsStruct<LeafSchemaRecord['V1']>(
       [
-        ['id', beetSolana.publicKey],
-        ['owner', beetSolana.publicKey],
-        ['delegate', beetSolana.publicKey],
+        ['id', beetMiraland.publicKey],
+        ['owner', beetMiraland.publicKey],
+        ['delegate', beetMiraland.publicKey],
         ['nonce', beet.u64],
         ['dataHash', beet.uniformFixedSizeArray(beet.u8, 32)],
         ['creatorHash', beet.uniformFixedSizeArray(beet.u8, 32)],

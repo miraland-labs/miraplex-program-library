@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { ListingConfigVersion, listingConfigVersionBeet } from './ListingConfigVersion';
 export type Bid = {
   version: ListingConfigVersion;
@@ -23,7 +23,7 @@ export const bidBeet = new beet.BeetArgsStruct<Bid>(
   [
     ['version', listingConfigVersionBeet],
     ['amount', beet.u64],
-    ['buyerTradeState', beetSolana.publicKey],
+    ['buyerTradeState', beetMiraland.publicKey],
   ],
   'Bid',
 );

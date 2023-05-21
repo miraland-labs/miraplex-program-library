@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Key, keyBeet } from '../types/Key';
 import { Reservation, reservationBeet } from '../types/Reservation';
 
@@ -93,7 +93,7 @@ export class ReservationListV2 implements ReservationListV2Args {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, reservationListV2Beet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, reservationListV2Beet);
   }
 
   /**
@@ -189,7 +189,7 @@ export const reservationListV2Beet = new beet.FixableBeetStruct<
 >(
   [
     ['key', keyBeet],
-    ['masterEdition', beetSolana.publicKey],
+    ['masterEdition', beetMiraland.publicKey],
     ['supplySnapshot', beet.coption(beet.u64)],
     ['reservations', beet.array(reservationBeet)],
     ['totalReservationSpots', beet.u64],

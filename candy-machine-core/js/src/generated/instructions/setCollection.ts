@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 
 /**
  * @category Instructions
@@ -68,7 +68,7 @@ export const setCollectionInstructionDiscriminator = [192, 254, 206, 76, 168, 18
  */
 export function createSetCollectionInstruction(
   accounts: SetCollectionInstructionAccounts,
-  programId = new web3.PublicKey('CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'),
+  programId = new web3.PublicKey('CMv3YQQ7nbhFUjArAcGuRcDa6avoYN1a72HRZMvJ6WnU'),
 ) {
   const [data] = setCollectionStruct.serialize({
     instructionDiscriminator: setCollectionInstructionDiscriminator,

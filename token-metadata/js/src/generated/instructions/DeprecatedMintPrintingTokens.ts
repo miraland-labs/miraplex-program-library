@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as splToken from '@solana/spl-token';
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as solartiToken from '@solarti/solarti-token';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 import {
   MintPrintingTokensViaTokenArgs,
   mintPrintingTokensViaTokenArgsBeet,
@@ -107,7 +107,7 @@ export function createDeprecatedMintPrintingTokensInstruction(
       isSigner: false,
     },
     {
-      pubkey: accounts.tokenProgram ?? splToken.TOKEN_PROGRAM_ID,
+      pubkey: accounts.tokenProgram ?? solartiToken.TOKEN_PROGRAM_ID,
       isWritable: false,
       isSigner: false,
     },

@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 /**
  * This type is used to derive the {@link EscrowAuthority} type as well as the de/serializer.
  * However don't refer to it in your code but use the {@link EscrowAuthority} type instead.
@@ -51,7 +51,7 @@ export const escrowAuthorityBeet = beet.dataEnum<EscrowAuthorityRecord>([
   [
     'Creator',
     new beet.BeetArgsStruct<EscrowAuthorityRecord['Creator']>(
-      [['fields', beet.fixedSizeTuple([beetSolana.publicKey])]],
+      [['fields', beet.fixedSizeTuple([beetMiraland.publicKey])]],
       'EscrowAuthorityRecord["Creator"]',
     ),
   ],

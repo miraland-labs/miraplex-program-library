@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Account, Connection, Keypair, LAMPORTS_PER_MLN } from '@solana/web3.js';
+import { Account, Connection, Keypair, LAMPORTS_PER_MLN } from '@solarti/web3.js';
 import { NodeWallet } from '@project-serum/common'; //TODO remove this
 import { expect, use } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
 import { Fanout, FanoutClient, MembershipModel } from '../src';
 import { keypairIdentity, Metaplex } from '@metaplex-foundation/js';
-import { LOCALHOST } from '@metaplex-foundation/amman';
+import { LOCALHOST } from '@miraplex/amman';
 
 use(ChaiAsPromised);
 

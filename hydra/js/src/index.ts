@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { AnchorProvider, BorshAccountsCoder } from '@project-serum/anchor';
+import { AnchorProvider, BorshAccountsCoder } from '@solarti/anchor';
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   NATIVE_MINT,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import {
   AccountInfo,
   Connection,
@@ -18,7 +18,7 @@ import {
   Transaction,
   TransactionInstruction,
   TransactionSignature,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import { ProgramError } from './systemErrors';
 import {
   createProcessAddMemberNftInstruction,
@@ -37,7 +37,7 @@ import {
 } from './generated/instructions';
 import { MembershipModel } from './generated/types';
 import { Fanout } from './generated/accounts';
-import { PROGRAM_ADDRESS as TM_PROGRAM_ADDRESS } from '@metaplex-foundation/mpl-token-metadata';
+import { PROGRAM_ADDRESS as TM_PROGRAM_ADDRESS } from '@miraplex/miraplex-token-metadata';
 import bs58 from 'bs58';
 import { chunks } from './utils';
 

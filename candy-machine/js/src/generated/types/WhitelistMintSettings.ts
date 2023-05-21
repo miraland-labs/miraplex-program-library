@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { WhitelistMintMode, whitelistMintModeBeet } from './WhitelistMintMode';
 export type WhitelistMintSettings = {
   mode: WhitelistMintMode;
@@ -23,7 +23,7 @@ export type WhitelistMintSettings = {
 export const whitelistMintSettingsBeet = new beet.FixableBeetArgsStruct<WhitelistMintSettings>(
   [
     ['mode', whitelistMintModeBeet],
-    ['mint', beetSolana.publicKey],
+    ['mint', beetMiraland.publicKey],
     ['presale', beet.bool],
     ['discountPrice', beet.coption(beet.u64)],
   ],

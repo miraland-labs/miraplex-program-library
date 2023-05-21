@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { Connection, Keypair, LAMPORTS_PER_MLN } from '@solana/web3.js';
-import * as splToken from '@solana/spl-token';
+import { Connection, Keypair, LAMPORTS_PER_MLN } from '@solarti/web3.js';
+import * as splToken from '@solarti/solarti-token';
 import { expect, use } from 'chai';
 import ChaiAsPromised from 'chai-as-promised';
 import { Fanout, FanoutClient, FanoutMembershipVoucher, FanoutMint, MembershipModel } from '../src';
-import { LOCALHOST } from '@metaplex-foundation/amman';
+import { LOCALHOST } from '@miraplex/amman';
 import { builtTokenFanout } from './utils/scenarios';
 import BN from 'bn.js';
-import { Wallet } from '@project-serum/anchor';
+import { Wallet } from '@solarti/anchor';
 
 use(ChaiAsPromised);
 

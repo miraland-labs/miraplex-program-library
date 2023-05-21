@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Data, dataBeet } from './Data';
 import { CollectionToggle, collectionToggleBeet } from './CollectionToggle';
 import { CollectionDetailsToggle, collectionDetailsToggleBeet } from './CollectionDetailsToggle';
@@ -62,7 +62,7 @@ export const updateArgsBeet = beet.dataEnum<UpdateArgsRecord>([
     'V1',
     new beet.FixableBeetArgsStruct<UpdateArgsRecord['V1']>(
       [
-        ['newUpdateAuthority', beet.coption(beetSolana.publicKey)],
+        ['newUpdateAuthority', beet.coption(beetMiraland.publicKey)],
         ['data', beet.coption(dataBeet)],
         ['primarySaleHappened', beet.coption(beet.bool)],
         ['isMutable', beet.coption(beet.bool)],

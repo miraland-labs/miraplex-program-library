@@ -5,7 +5,7 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
+import * as beet from '@miraplex/beet';
 import { TokenStandard, tokenStandardBeet } from './TokenStandard';
 import { Collection, collectionBeet } from './Collection';
 import { Uses, usesBeet } from './Uses';

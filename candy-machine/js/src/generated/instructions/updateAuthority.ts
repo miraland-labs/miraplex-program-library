@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * @category Instructions
@@ -29,7 +29,7 @@ export const updateAuthorityStruct = new beet.FixableBeetArgsStruct<
 >(
   [
     ['instructionDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['newAuthority', beet.coption(beetSolana.publicKey)],
+    ['newAuthority', beet.coption(beetMiraland.publicKey)],
   ],
   'UpdateAuthorityInstructionArgs',
 );
@@ -47,6 +47,7 @@ export type UpdateAuthorityInstructionAccounts = {
   candyMachine: web3.PublicKey;
   authority: web3.PublicKey;
   wallet: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const updateAuthorityInstructionDiscriminator = [32, 46, 64, 28, 149, 75, 243, 88];
@@ -64,7 +65,7 @@ export const updateAuthorityInstructionDiscriminator = [32, 46, 64, 28, 149, 75,
 export function createUpdateAuthorityInstruction(
   accounts: UpdateAuthorityInstructionAccounts,
   args: UpdateAuthorityInstructionArgs,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = updateAuthorityStruct.serialize({
     instructionDiscriminator: updateAuthorityInstructionDiscriminator,
@@ -87,6 +88,12 @@ export function createUpdateAuthorityInstruction(
       isSigner: false,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

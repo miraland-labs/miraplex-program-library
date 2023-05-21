@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link FanoutMint}
@@ -176,9 +176,9 @@ export const fanoutMintBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['mint', beetSolana.publicKey],
-    ['fanout', beetSolana.publicKey],
-    ['tokenAccount', beetSolana.publicKey],
+    ['mint', beetMiraland.publicKey],
+    ['fanout', beetMiraland.publicKey],
+    ['tokenAccount', beetMiraland.publicKey],
     ['totalInflow', beet.u64],
     ['lastSnapshotAmount', beet.u64],
     ['bumpSeed', beet.u8],

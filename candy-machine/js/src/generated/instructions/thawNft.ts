@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as splToken from '@solana/spl-token';
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as solartiToken from '@solarti/solarti-token';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 
 /**
  * @category Instructions
@@ -46,6 +46,7 @@ export type ThawNftInstructionAccounts = {
   tokenProgram?: web3.PublicKey;
   tokenMetadataProgram: web3.PublicKey;
   systemProgram?: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const thawNftInstructionDiscriminator = [92, 44, 210, 187, 172, 6, 64, 183];
@@ -60,7 +61,7 @@ export const thawNftInstructionDiscriminator = [92, 44, 210, 187, 172, 6, 64, 18
  */
 export function createThawNftInstruction(
   accounts: ThawNftInstructionAccounts,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = thawNftStruct.serialize({
     instructionDiscriminator: thawNftInstructionDiscriminator,
@@ -102,7 +103,7 @@ export function createThawNftInstruction(
       isSigner: true,
     },
     {
-      pubkey: accounts.tokenProgram ?? splToken.TOKEN_PROGRAM_ID,
+      pubkey: accounts.tokenProgram ?? solartiToken.TOKEN_PROGRAM_ID,
       isWritable: false,
       isSigner: false,
     },
@@ -117,6 +118,12 @@ export function createThawNftInstruction(
       isSigner: false,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

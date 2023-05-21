@@ -4,11 +4,11 @@ import {
   PublicKey,
   Connection,
   Keypair,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import fs from 'fs';
 import log from 'loglevel';
-import { BN, Program, web3 } from '@project-serum/anchor';
-import { Token, TOKEN_PROGRAM_ID } from '@solana/spl-token';
+import { BN, Program, web3 } from '@solarti/anchor';
+import { Token, TOKEN_PROGRAM_ID } from '@solarti/solarti-token';
 import { StorageType } from './storage-type';
 
 import { getAtaForMint } from './accounts';
@@ -18,7 +18,7 @@ import {
   UseMethod,
   Metadata,
   MetadataKey,
-} from '@metaplex-foundation/mpl-token-metadata';
+} from '@miraplex/miraplex-token-metadata';
 
 export async function getCandyMachineV2Config(
   walletKeyPair: web3.Keypair,

@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Key, keyBeet } from '../types/Key';
 import { Data, dataBeet } from '../types/Data';
 import { TokenStandard, tokenStandardBeet } from '../types/TokenStandard';
@@ -114,7 +114,7 @@ export class Metadata implements MetadataArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, metadataBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, metadataBeet);
   }
 
   /**
@@ -190,8 +190,8 @@ export class Metadata implements MetadataArgs {
 export const metadataBeet = new beet.FixableBeetStruct<Metadata, MetadataArgs>(
   [
     ['key', keyBeet],
-    ['updateAuthority', beetSolana.publicKey],
-    ['mint', beetSolana.publicKey],
+    ['updateAuthority', beetMiraland.publicKey],
+    ['mint', beetMiraland.publicKey],
     ['data', dataBeet],
     ['primarySaleHappened', beet.bool],
     ['isMutable', beet.bool],

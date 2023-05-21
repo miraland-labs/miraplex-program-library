@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link FreezePDA}
@@ -72,8 +72,9 @@ export class FreezePDA implements FreezePDAArgs {
   static async fromAccountAddress(
     connection: web3.Connection,
     address: web3.PublicKey,
+    commitmentOrConfig?: web3.Commitment | web3.GetAccountInfoConfig,
   ): Promise<FreezePDA> {
-    const accountInfo = await connection.getAccountInfo(address);
+    const accountInfo = await connection.getAccountInfo(address, commitmentOrConfig);
     if (accountInfo == null) {
       throw new Error(`Unable to find FreezePDA account at ${address}`);
     }
@@ -87,9 +88,9 @@ export class FreezePDA implements FreezePDAArgs {
    * @param programId - the program that owns the accounts we are filtering
    */
   static gpaBuilder(
-    programId: web3.PublicKey = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+    programId: web3.PublicKey = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, freezePDABeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, freezePDABeet);
   }
 
   /**
@@ -200,7 +201,7 @@ export const freezePDABeet = new beet.FixableBeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['candyMachine', beetSolana.publicKey],
+    ['candyMachine', beetMiraland.publicKey],
     ['allowThaw', beet.bool],
     ['frozenCount', beet.u64],
     ['mintStart', beet.coption(beet.i64)],

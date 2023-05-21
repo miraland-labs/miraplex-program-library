@@ -189,7 +189,7 @@ under either the [MIT][mit-license] or the [Apache][apache-license] licenses.
 [mpl-hydra-npm]:https://www.npmjs.com/package/@metaplex-foundation/mpl-hydra
 [mpl-nft-packs-npm]:https://www.npmjs.com/package/@metaplex-foundation/mpl-nft-packs
 [mpl-token-entangler-npm]:https://www.npmjs.com/package/@metaplex-foundation/mpl-token-entangler
-[mpl-token-metadata-npm]:https://www.npmjs.com/package/@metaplex-foundation/mpl-token-metadata
+[mpl-token-metadata-npm]:https://www.npmjs.com/package/@miraplex/miraplex-token-metadata
 
 [mpl-auction-house-nimg-long]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-auction-house?label=npm%20%7C%20mpl-auction-house&logo=typescript
 [mpl-auction-house-nimg]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-auction-house?logo=typescript
@@ -221,8 +221,8 @@ under either the [MIT][mit-license] or the [Apache][apache-license] licenses.
 [mpl-token-entangler-nimg-long]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-token-entangler?label=npm%20%7C%20mpl-token-entangler&logo=typescript
 [mpl-token-entangler-nimg]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-token-entangler?logo=typescript
 
-[mpl-token-metadata-nimg-long]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-token-metadata?label=npm%20%7C%20mpl-token-metadata&logo=typescript
-[mpl-token-metadata-nimg]:https://img.shields.io/npm/v/@metaplex-foundation/mpl-token-metadata?logo=typescript
+[mpl-token-metadata-nimg-long]:https://img.shields.io/npm/v/@miraplex/miraplex-token-metadata?label=npm%20%7C%20mpl-token-metadata&logo=typescript
+[mpl-token-metadata-nimg]:https://img.shields.io/npm/v/@miraplex/miraplex-token-metadata?logo=typescript
 
 <!-- Licenses -->
 

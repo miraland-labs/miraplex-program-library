@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link TreeConfig}
@@ -87,7 +87,7 @@ export class TreeConfig implements TreeConfigArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('BGUMAp9Gq7iTEuizy4pqaxsTyUCBK68MDfK752saRPUY'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, treeConfigBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, treeConfigBeet);
   }
 
   /**
@@ -185,8 +185,8 @@ export const treeConfigBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['treeCreator', beetSolana.publicKey],
-    ['treeDelegate', beetSolana.publicKey],
+    ['treeCreator', beetMiraland.publicKey],
+    ['treeDelegate', beetMiraland.publicKey],
     ['totalMintCapacity', beet.u64],
     ['numMinted', beet.u64],
     ['isPublic', beet.bool],

@@ -7,12 +7,12 @@ use std::{
 };
 
 use anchor_client::solana_client::rpc_client::RpcClient;
-use solana_gateway::{
-    instruction::{self, NetworkFeature},
-    state::{
-        get_gatekeeper_address_with_seed, get_gateway_token_address_with_seed, GatewayTokenState,
-    },
-};
+// use solana_gateway::{
+//     instruction::{self, NetworkFeature},
+//     state::{
+//         get_gatekeeper_address_with_seed, get_gateway_token_address_with_seed, GatewayTokenState,
+//     },
+// };
 use solana_program::pubkey;
 use solana_program_test::*;
 use solana_sdk::{
@@ -354,7 +354,7 @@ async fn bot_tax_on_gatekeeper() {
             &gateway_account,
             &gatekeeper_authority.pubkey(),
             &gatekeeper_account,
-            GatewayTokenState::Revoked,
+            // GatewayTokenState::Revoked,
         )],
         Some(&context.payer.pubkey()),
         &[&context.payer, &gatekeeper_authority],

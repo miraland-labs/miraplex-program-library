@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 
 /**
  * @category Instructions
@@ -31,6 +31,7 @@ export const withdrawFundsStruct = new beet.BeetArgsStruct<{
 export type WithdrawFundsInstructionAccounts = {
   candyMachine: web3.PublicKey;
   authority: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const withdrawFundsInstructionDiscriminator = [241, 36, 29, 111, 208, 31, 104, 217];
@@ -45,7 +46,7 @@ export const withdrawFundsInstructionDiscriminator = [241, 36, 29, 111, 208, 31,
  */
 export function createWithdrawFundsInstruction(
   accounts: WithdrawFundsInstructionAccounts,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = withdrawFundsStruct.serialize({
     instructionDiscriminator: withdrawFundsInstructionDiscriminator,
@@ -62,6 +63,12 @@ export function createWithdrawFundsInstruction(
       isSigner: true,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

@@ -4,21 +4,21 @@ import {
   getMetadata,
   getMasterEdition,
 } from '../helpers/accounts';
-import * as anchor from '@project-serum/anchor';
+import * as anchor from '@solarti/anchor';
 import fetch from 'node-fetch';
 import {
   ASSOCIATED_TOKEN_PROGRAM_ID,
   MintLayout,
   Token,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
+} from '@solarti/solarti-token';
 import {
   Keypair,
   Connection,
   SystemProgram,
   TransactionInstruction,
   PublicKey,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import log from 'loglevel';
 import {
   DataV2,
@@ -30,7 +30,7 @@ import {
   CreateMasterEditionV3,
   UpdateMetadataV2,
   SetAndVerifyCollectionCollection,
-} from '@metaplex-foundation/mpl-token-metadata';
+} from '@miraplex/miraplex-token-metadata';
 import PromisePool from '@supercharge/promise-pool/dist';
 import * as cliProgress from 'cli-progress';
 import { sleep } from '../helpers/various';

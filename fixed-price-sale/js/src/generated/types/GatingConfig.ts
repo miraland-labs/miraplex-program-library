@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 export type GatingConfig = {
   collection: web3.PublicKey;
   expireOnUse: boolean;
@@ -20,7 +20,7 @@ export type GatingConfig = {
  */
 export const gatingConfigBeet = new beet.FixableBeetArgsStruct<GatingConfig>(
   [
-    ['collection', beetSolana.publicKey],
+    ['collection', beetMiraland.publicKey],
     ['expireOnUse', beet.bool],
     ['gatingTime', beet.coption(beet.u64)],
   ],

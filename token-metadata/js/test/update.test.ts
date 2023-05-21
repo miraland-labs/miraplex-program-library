@@ -11,11 +11,11 @@ import {
 } from '../src/generated';
 import test from 'tape';
 import { amman, InitTransactions, killStuckProcess } from './setup';
-import { Keypair, PublicKey } from '@solana/web3.js';
+import { Keypair, PublicKey } from '@solarti/web3.js';
 import { createAndMintDefaultAsset, createDefaultAsset } from './utils/digital-asset-manager';
 import { UpdateTestData } from './utils/update-test-data';
 import { encode } from '@msgpack/msgpack';
-import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from '@metaplex-foundation/mpl-token-auth-rules';
+import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from '@miraplex/miraplex-token-auth-rules';
 import { spokSamePubkey } from './utils';
 import { findTokenRecordPda } from './utils/programmable';
 

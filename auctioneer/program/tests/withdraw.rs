@@ -24,7 +24,7 @@ async fn withdraw_success() {
     let owner_pubkey = &test_metadata.token.pubkey();
 
     let airdrop_amount = 2_000_000_000;
-    // Airdrop owner with some SOL.
+    // Airdrop owner with some MLN.
     airdrop(&mut context, owner_pubkey, airdrop_amount)
         .await
         .unwrap();

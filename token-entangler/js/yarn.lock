@@ -48,9 +48,9 @@
   resolved "https://registry.yarnpkg.com/@humanwhocodes/object-schema/-/object-schema-1.2.1.tgz#b520529ec21d8e5945a1851dfd1c32e94e39ff45"
   integrity sha512-ZnQMnLV4e7hDlUvw8H+U8ASL02SS2Gn6+9Ac3wGGLIe7+je2AeAOxPY+izIPJDfFDb7eDjev0Us8MO1iFRN8hA==
 
-"@metaplex-foundation/beet-solana@^0.1.1":
+"@miraplex/beet-miraland@^0.1.1":
   version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@metaplex-foundation/beet-solana/-/beet-solana-0.1.1.tgz#85deec5d3354ee1da868bd6bb0de5ae1ea92d209"
+  resolved "https://registry.yarnpkg.com/@miraplex/beet-miraland/-/beet-solana-0.1.1.tgz#85deec5d3354ee1da868bd6bb0de5ae1ea92d209"
   integrity sha512-QV2DbxjaJWLkMvn12OC09g+r7a6R0uNwf8msYuOUSw4cG7amXzvFb7s0bh4IxY3Rk8/0ma0PfKi/FEdC7Hi4Pg==
   dependencies:
     "@metaplex-foundation/beet" ">=0.1.0"
@@ -90,7 +90,7 @@
   integrity sha512-fSONdHrUpFNxiSJ8pdKVl3vGz+khzxfJTEygOBWiRtV7uPaN019SqsoViz1bw0te1TnAvB/MdaIREhGfFpR4Fg==
   dependencies:
     "@metaplex-foundation/beet" "^0.1.4"
-    "@metaplex-foundation/beet-solana" "^0.1.1"
+    "@miraplex/beet-miraland" "^0.1.1"
     "@metaplex-foundation/rustbin" "^0.3.0"
     "@solana/web3.js" "^1.36.0"
     camelcase "^6.2.1"

@@ -1,8 +1,8 @@
-import { Connection, PublicKey, Transaction } from '@solana/web3.js';
+import { Connection, PublicKey, Transaction } from '@solarti/web3.js';
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore createMintToInstruction export actually exist but isn't setup correctly
-import { createMintToInstruction } from '@solana/spl-token';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
+import { createMintToInstruction } from '@solarti/solarti-token';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
 import { strict as assert } from 'assert';
 
 import { CreateMint } from './createMintAccount';

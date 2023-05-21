@@ -232,7 +232,7 @@ pub fn close_token_account<'a>(
     invoke(&ix, &[account, destination, owner])
 }
 
-/// transfer all the SOL from source to receiver
+/// transfer all the MLN from source to receiver
 pub fn empty_account_balance(
     source: &AccountInfo,
     receiver: &AccountInfo,

@@ -6,7 +6,7 @@ use crate::{
     is_feature_active, CandyError, CandyMachine, CollectionPDA,
 };
 
-/// Withdraw SOL from candy machine account.
+/// Withdraw MLN from candy machine account.
 #[derive(Accounts)]
 pub struct WithdrawFunds<'info> {
     #[account(mut, close = authority, has_one = authority)]

@@ -74,7 +74,7 @@ pub fn spl_token_close(params: TokenCloseParams<'_, '_>) -> ProgramResult {
 pub struct TokenCloseParams<'a: 'b, 'b> {
     /// Token account
     pub account: AccountInfo<'a>,
-    /// Destination for redeemed SOL.
+    /// Destination for redeemed MLN.
     pub destination: AccountInfo<'a>,
     /// Owner of the token account.
     pub owner: AccountInfo<'a>,

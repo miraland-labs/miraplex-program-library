@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { CandyMachineData, candyMachineDataBeet } from '../types/CandyMachineData';
 
 /**
@@ -91,9 +91,9 @@ export class CandyMachine implements CandyMachineArgs {
    * @param programId - the program that owns the accounts we are filtering
    */
   static gpaBuilder(
-    programId: web3.PublicKey = new web3.PublicKey('CndyV3LdqHUfDLmE5naZjVN8rBZz4tqhdefbAnjHG3JR'),
+    programId: web3.PublicKey = new web3.PublicKey('CMv3YQQ7nbhFUjArAcGuRcDa6avoYN1a72HRZMvJ6WnU'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, candyMachineBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, candyMachineBeet);
   }
 
   /**
@@ -195,9 +195,9 @@ export const candyMachineBeet = new beet.FixableBeetStruct<
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
     ['features', beet.u64],
-    ['authority', beetSolana.publicKey],
-    ['mintAuthority', beetSolana.publicKey],
-    ['collectionMint', beetSolana.publicKey],
+    ['authority', beetMiraland.publicKey],
+    ['mintAuthority', beetMiraland.publicKey],
+    ['collectionMint', beetMiraland.publicKey],
     ['itemsRedeemed', beet.u64],
     ['data', candyMachineDataBeet],
   ],

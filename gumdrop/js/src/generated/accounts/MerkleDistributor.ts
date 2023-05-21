@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 
 /**
  * Arguments used to create {@link MerkleDistributor}
@@ -146,10 +146,10 @@ export const merkleDistributorBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['base', beetSolana.publicKey],
+    ['base', beetMiraland.publicKey],
     ['bump', beet.u8],
     ['root', beet.uniformFixedSizeArray(beet.u8, 32)],
-    ['temporal', beetSolana.publicKey],
+    ['temporal', beetMiraland.publicKey],
   ],
   MerkleDistributor.fromArgs,
   'MerkleDistributor',

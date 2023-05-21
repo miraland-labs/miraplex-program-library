@@ -1,9 +1,9 @@
-import { Connection, PublicKey } from '@solana/web3.js';
+import { Connection, PublicKey } from '@solarti/web3.js';
 import { AssetData, Metadata, TokenStandard, AuthorizationData } from '../../src/generated';
 import { InitTransactions } from '../setup';
 import test from 'tape';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
-import { Keypair } from '@solana/web3.js';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
+import { Keypair } from '@solarti/web3.js';
 
 export class DigitalAssetManager {
   mint: PublicKey;

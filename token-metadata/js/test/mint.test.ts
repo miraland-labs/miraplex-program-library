@@ -1,5 +1,5 @@
-import { getAccount } from '@solana/spl-token';
-import { PublicKey } from '@solana/web3.js';
+import { getAccount } from '@solarti/solarti-token';
+import { PublicKey } from '@solarti/web3.js';
 import { BN } from 'bn.js';
 import spok from 'spok';
 import { AssetData, PROGRAM_ID, TokenStandard } from '../src/generated';

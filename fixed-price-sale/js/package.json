@@ -39,12 +39,12 @@
   "author": "Metaplex Maintainers <contact@metaplex.com>",
   "license": "Apache-2.0",
   "dependencies": {
-    "@metaplex-foundation/beet": "^0.7.1",
-    "@metaplex-foundation/beet-solana": "^0.4.0",
+    "@miraplex/beet": "^0.7.2",
+    "@miraplex/beet-miraland": "^0.4.3",
     "@solana/buffer-layout": "^4.0.0",
-    "@solana/spl-token": "^0.3.6",
-    "@solana/web3.js": "^1.66.2",
-    "@metaplex-foundation/cusper": "^0.0.2"
+    "@solarti/solarti-token": "^0.3.7",
+    "@solarti/web3.js": "^1.73.2",
+    "@miraplex/cusper": "^0.0.2"
   },
   "devDependencies": {
     "eslint-config-prettier": "^8.3.0",
@@ -52,10 +52,10 @@
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@metaplex-foundation/js": "^0.17.5",
-    "@metaplex-foundation/amman": "^0.12.1",
-    "@metaplex-foundation/amman-client": "^0.2.4",
-    "@metaplex-foundation/mpl-token-metadata": "2.5.1",
-    "@metaplex-foundation/solita": "^0.19.0",
+    "@miraplex/amman": "^0.12.5",
+    "@miraplex/amman-client": "^0.2.6",
+    "@miraplex/miraplex-token-metadata": "2.7.0",
+    "@miraplex/solita": "^0.19.5",
     "@types/bn.js": "^5.1.0",
     "@types/debug": "^4.1.7",
     "@types/tape": "^4.13.2",

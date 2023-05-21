@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
 import { Key, keyBeet } from '../types/Key';
 
 /**
@@ -89,7 +89,7 @@ export class MasterEditionV1 implements MasterEditionV1Args {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('Meta88XpDHcSJZDFiHop6c9sXaufkZX5depkZyrYBWv'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, masterEditionV1Beet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, masterEditionV1Beet);
   }
 
   /**
@@ -170,8 +170,8 @@ export const masterEditionV1Beet = new beet.FixableBeetStruct<MasterEditionV1, M
     ['key', keyBeet],
     ['supply', beet.u64],
     ['maxSupply', beet.coption(beet.u64)],
-    ['printingMint', beetSolana.publicKey],
-    ['oneTimePrintingAuthorizationMint', beetSolana.publicKey],
+    ['printingMint', beetMiraland.publicKey],
+    ['oneTimePrintingAuthorizationMint', beetMiraland.publicKey],
   ],
   MasterEditionV1.fromArgs,
   'MasterEditionV1',

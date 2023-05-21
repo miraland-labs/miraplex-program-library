@@ -11,7 +11,7 @@ import {
   createMarket,
 } from './actions';
 import { CreateMarketInstructionArgs } from '../src';
-import { Account as TokenAccount, getAccount } from '@solana/spl-token';
+import { Account as TokenAccount, getAccount } from '@solarti/solarti-token';
 import { Metaplex, toBigNumber } from '@metaplex-foundation/js';
 
 killStuckProcess();

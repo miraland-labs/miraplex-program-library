@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
-import * as beet from '@metaplex-foundation/beet';
+import * as web3 from '@solarti/web3.js';
+import * as beetMiraland from '@miraplex/beet-miraland';
+import * as beet from '@miraplex/beet';
 
 /**
  * Arguments used to create {@link AuctionHouse}
@@ -125,7 +125,7 @@ export class AuctionHouse implements AuctionHouseArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('hausS13jsjafwWwGqZTUQRmWyvyxn9EQpqMwV1PBBmk'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, auctionHouseBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, auctionHouseBeet);
   }
 
   /**
@@ -215,13 +215,13 @@ export const auctionHouseBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['auctionHouseFeeAccount', beetSolana.publicKey],
-    ['auctionHouseTreasury', beetSolana.publicKey],
-    ['treasuryWithdrawalDestination', beetSolana.publicKey],
-    ['feeWithdrawalDestination', beetSolana.publicKey],
-    ['treasuryMint', beetSolana.publicKey],
-    ['authority', beetSolana.publicKey],
-    ['creator', beetSolana.publicKey],
+    ['auctionHouseFeeAccount', beetMiraland.publicKey],
+    ['auctionHouseTreasury', beetMiraland.publicKey],
+    ['treasuryWithdrawalDestination', beetMiraland.publicKey],
+    ['feeWithdrawalDestination', beetMiraland.publicKey],
+    ['treasuryMint', beetMiraland.publicKey],
+    ['authority', beetMiraland.publicKey],
+    ['creator', beetMiraland.publicKey],
     ['bump', beet.u8],
     ['treasuryBump', beet.u8],
     ['feePayerBump', beet.u8],
@@ -230,7 +230,7 @@ export const auctionHouseBeet = new beet.BeetStruct<
     ['canChangeSalePrice', beet.bool],
     ['escrowPaymentBump', beet.u8],
     ['hasAuctioneer', beet.bool],
-    ['auctioneerAddress', beetSolana.publicKey],
+    ['auctioneerAddress', beetMiraland.publicKey],
     ['scopes', beet.uniformFixedSizeArray(beet.bool, 7)],
   ],
   AuctionHouse.fromArgs,

@@ -113,7 +113,7 @@ impl<'info> Buy<'info> {
             }
 
             invoke(
-                // for native SOL transfer user_wallet key == user_token_account key
+                // for native MLN transfer user_wallet key == user_token_account key
                 &system_instruction::transfer(
                     &user_token_account.key(),
                     &treasury_holder.key(),

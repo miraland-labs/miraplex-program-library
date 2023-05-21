@@ -26,7 +26,7 @@ pub struct AuctioneerWithdraw<'info> {
     pub wallet: UncheckedAccount<'info>,
 
     /// CHECK: Verified through CPI
-    /// SPL token account or native SOL account to transfer funds to. If the account is a native SOL account, this is the same as the wallet address.
+    /// SPL token account or native MLN account to transfer funds to. If the account is a native MLN account, this is the same as the wallet address.
     #[account(mut)]
     pub receipt_account: UncheckedAccount<'info>,
 

@@ -1,9 +1,9 @@
-import { Connection, Keypair, PublicKey } from '@solana/web3.js';
+import { Connection, Keypair, PublicKey } from '@solarti/web3.js';
 import { Test } from 'tape';
-import { PayerTransactionHandler } from '@metaplex-foundation/amman-client';
+import { PayerTransactionHandler } from '@miraplex/amman-client';
 import { CandyMachine } from '../../src';
 import { BN } from 'bn.js';
-import { keypairIdentity, Metaplex } from '@metaplex-foundation/js';
+import { keypairIdentity, Metaplex } from '@metaplex-solarti/js';
 import { InitTransactions } from '../setup';
 
 export async function drain(

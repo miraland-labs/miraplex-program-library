@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 export type Reservation = {
   address: web3.PublicKey;
   spotsRemaining: beet.bignum;
@@ -20,7 +20,7 @@ export type Reservation = {
  */
 export const reservationBeet = new beet.BeetArgsStruct<Reservation>(
   [
-    ['address', beetSolana.publicKey],
+    ['address', beetMiraland.publicKey],
     ['spotsRemaining', beet.u64],
     ['totalSpots', beet.u64],
   ],

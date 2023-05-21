@@ -4,7 +4,7 @@
 > This is an alpha release, currently only available on devnet. 
 >
 > * :crab: Rust crate: [v1.7.0-beta.2](https://crates.io/crates/mpl-token-metadata/1.7.0-beta.2)
-> * :package: NPM package: [v2.7.0-beta.2](https://www.npmjs.com/package/@metaplex-foundation/mpl-token-metadata/v/2.7.0-beta.2)
+> * :package: NPM package: [v2.7.0-beta.2](https://www.npmjs.com/package/@miraplex/miraplex-token-metadata/v/2.7.0-beta.2)
 >
 > **Note:** The instructions are subject to changes.
 
@@ -357,7 +357,7 @@ Currently, we have three types of metadata delegates:
 
 ## 📦  JS SDK
 
-Token Metadata includes a low-leve Solita-based SDK, which can be used to interact with the new API. The NPM package can be found [here](https://www.npmjs.com/package/@metaplex-foundation/mpl-token-metadata/v/2.6.0-alpha.1).
+Token Metadata includes a low-leve Solita-based SDK, which can be used to interact with the new API. The NPM package can be found [here](https://www.npmjs.com/package/@miraplex/miraplex-token-metadata/v/2.6.0-alpha.1).
 
 ## 🏛️  Token Authorization Rules
 

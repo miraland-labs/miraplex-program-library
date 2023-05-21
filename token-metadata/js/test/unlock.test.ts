@@ -1,4 +1,4 @@
-import { getAccount } from '@solana/spl-token';
+import { getAccount } from '@solarti/solarti-token';
 import { BN } from 'bn.js';
 import spok from 'spok';
 import { DelegateArgs, TokenRecord, TokenStandard, TokenState } from '../src/generated';

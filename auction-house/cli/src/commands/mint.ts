@@ -1,4 +1,4 @@
-import { Keypair, PublicKey, SystemProgram } from '@solana/web3.js';
+import { Keypair, PublicKey, SystemProgram } from '@solarti/web3.js';
 import {
   CandyMachine,
   getAtaForMint,
@@ -17,8 +17,8 @@ import {
   TOKEN_METADATA_PROGRAM_ID,
   TOKEN_PROGRAM_ID,
 } from '../helpers/constants';
-import * as anchor from '@project-serum/anchor';
-import { MintLayout, Token } from '@solana/spl-token';
+import * as anchor from '@solarti/anchor';
+import { MintLayout, Token } from '@solarti/solarti-token';
 import { createAssociatedTokenAccountInstruction } from '../helpers/instructions';
 import { sendTransactionWithRetryWithKeypair } from '../helpers/transactions';
 import log from 'loglevel';

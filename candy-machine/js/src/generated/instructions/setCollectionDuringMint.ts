@@ -5,8 +5,8 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as beet from '@metaplex-foundation/beet';
-import * as web3 from '@solana/web3.js';
+import * as beet from '@miraplex/beet';
+import * as web3 from '@solarti/web3.js';
 
 /**
  * @category Instructions
@@ -49,6 +49,7 @@ export type SetCollectionDuringMintInstructionAccounts = {
   collectionMasterEdition: web3.PublicKey;
   authority: web3.PublicKey;
   collectionAuthorityRecord: web3.PublicKey;
+  anchorRemainingAccounts?: web3.AccountMeta[];
 };
 
 export const setCollectionDuringMintInstructionDiscriminator = [103, 17, 200, 25, 118, 95, 125, 61];
@@ -63,7 +64,7 @@ export const setCollectionDuringMintInstructionDiscriminator = [103, 17, 200, 25
  */
 export function createSetCollectionDuringMintInstruction(
   accounts: SetCollectionDuringMintInstructionAccounts,
-  programId = new web3.PublicKey('cndy3Z4yapfJBmL3ShUp5exZKqR3z33thTzeNMm2gRZ'),
+  programId = new web3.PublicKey('CandyREq6quLbyaDQ3z8aHp5yTFHoinYMaG2QuPD3333'),
 ) {
   const [data] = setCollectionDuringMintStruct.serialize({
     instructionDiscriminator: setCollectionDuringMintInstructionDiscriminator,
@@ -125,6 +126,12 @@ export function createSetCollectionDuringMintInstruction(
       isSigner: false,
     },
   ];
+
+  if (accounts.anchorRemainingAccounts != null) {
+    for (const acc of accounts.anchorRemainingAccounts) {
+      keys.push(acc);
+    }
+  }
 
   const ix = new web3.TransactionInstruction({
     programId,

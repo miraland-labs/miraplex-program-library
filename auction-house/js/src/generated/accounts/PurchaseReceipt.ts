@@ -5,9 +5,9 @@
  * See: https://github.com/metaplex-foundation/solita
  */
 
-import * as web3 from '@solana/web3.js';
-import * as beet from '@metaplex-foundation/beet';
-import * as beetSolana from '@metaplex-foundation/beet-solana';
+import * as web3 from '@solarti/web3.js';
+import * as beet from '@miraplex/beet';
+import * as beetMiraland from '@miraplex/beet-miraland';
 
 /**
  * Arguments used to create {@link PurchaseReceipt}
@@ -101,7 +101,7 @@ export class PurchaseReceipt implements PurchaseReceiptArgs {
   static gpaBuilder(
     programId: web3.PublicKey = new web3.PublicKey('hausS13jsjafwWwGqZTUQRmWyvyxn9EQpqMwV1PBBmk'),
   ) {
-    return beetSolana.GpaBuilder.fromStruct(programId, purchaseReceiptBeet);
+    return beetMiraland.GpaBuilder.fromStruct(programId, purchaseReceiptBeet);
   }
 
   /**
@@ -213,11 +213,11 @@ export const purchaseReceiptBeet = new beet.BeetStruct<
 >(
   [
     ['accountDiscriminator', beet.uniformFixedSizeArray(beet.u8, 8)],
-    ['bookkeeper', beetSolana.publicKey],
-    ['buyer', beetSolana.publicKey],
-    ['seller', beetSolana.publicKey],
-    ['auctionHouse', beetSolana.publicKey],
-    ['metadata', beetSolana.publicKey],
+    ['bookkeeper', beetMiraland.publicKey],
+    ['buyer', beetMiraland.publicKey],
+    ['seller', beetMiraland.publicKey],
+    ['auctionHouse', beetMiraland.publicKey],
+    ['metadata', beetMiraland.publicKey],
     ['tokenSize', beet.u64],
     ['price', beet.u64],
     ['bump', beet.u8],

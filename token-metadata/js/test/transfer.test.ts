@@ -15,7 +15,7 @@ import {
   sendAndConfirmTransaction,
   SYSVAR_INSTRUCTIONS_PUBKEY,
   Transaction,
-} from '@solana/web3.js';
+} from '@solarti/web3.js';
 import { createAndMintDefaultAsset } from './utils/digital-asset-manager';
 import {
   createAssociatedTokenAccount,
@@ -24,8 +24,8 @@ import {
   getAssociatedTokenAddress,
   getOrCreateAssociatedTokenAccount,
   TOKEN_PROGRAM_ID,
-} from '@solana/spl-token';
-import * as splToken from '@solana/spl-token';
+} from '@solarti/solarti-token';
+import * as splToken from '@solarti/solarti-token';
 import {
   Metadata,
   DelegateArgs,
@@ -33,7 +33,7 @@ import {
   TokenRecord,
   TokenDelegateRole,
 } from '../src/generated';
-import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from '@metaplex-foundation/mpl-token-auth-rules';
+import { PROGRAM_ID as TOKEN_AUTH_RULES_ID } from '@miraplex/miraplex-token-auth-rules';
 import { PROGRAM_ID as TOKEN_METADATA_ID } from '../src/generated';
 import { encode } from '@msgpack/msgpack';
 import spok from 'spok';

@@ -2,7 +2,7 @@ import test from 'tape';
 import { InitTransactions, killStuckProcess } from './setup';
 import { CandyMachine, CandyMachineData } from '../src/generated';
 import { COLLECTION_METADATA } from './utils';
-import { keypairIdentity, Metaplex } from '@metaplex-foundation/js';
+import { keypairIdentity, Metaplex } from '@metaplex-solarti/js';
 
 killStuckProcess();
 

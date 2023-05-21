@@ -7,8 +7,8 @@ import {
   loadCandyProgram,
   loadWalletKey,
 } from '../helpers/accounts';
-import { PublicKey } from '@solana/web3.js';
-import { BN, Program, web3 } from '@project-serum/anchor';
+import { PublicKey } from '@solarti/web3.js';
+import { BN, Program, web3 } from '@solarti/anchor';
 
 import fs from 'fs';
 
