@@ -1,0 +1,6 @@
+{
+  "entryPoints": ["src/mpl-redrop.ts"],
+  "excludeInternal": true,
+  "excludePrivate": true,
+  "out": "./docs"
+}
