@@ -2,6 +2,7 @@
 [package]
 name = "miraplex-redrop"
 version = "0.1.1"
+description = "Miraplex easy token/NFT airdrop enabler"
 authors = [
     "Miraland Crafters <crafters@miraland.top>",
     "Metaplex Developers <dev@metaplex.com>"
