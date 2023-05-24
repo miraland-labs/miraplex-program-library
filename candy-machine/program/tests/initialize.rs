@@ -6,13 +6,13 @@ use std::{
     time::{SystemTime, UNIX_EPOCH},
 };
 
-use anchor_client::solana_client::rpc_client::RpcClient;
-// use solana_gateway::{
-//     instruction::{self, NetworkFeature},
-//     state::{
-//         get_gatekeeper_address_with_seed, get_gateway_token_address_with_seed, GatewayTokenState,
-//     },
-// };
+use anchor_client::miraland_client::rpc_client::RpcClient;
+use miraland_gateway::{
+    instruction::{self, NetworkFeature},
+    state::{
+        get_gatekeeper_address_with_seed, get_gateway_token_address_with_seed, GatewayTokenState,
+    },
+};
 use solana_program::pubkey;
 use solana_program_test::*;
 use solana_sdk::{
@@ -36,7 +36,7 @@ use crate::{
     },
 };
 
-const GATEWAY_ACCOUNT_PUBKEY: Pubkey = pubkey!("gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs");
+const GATEWAY_ACCOUNT_PUBKEY: Pubkey = pubkey!("gtwyhHAjVceBRE9JkRPG7FoA62t1EqU2zT1C8uKBnoZ");
 
 mod core;
 mod utils;
@@ -240,7 +240,9 @@ async fn bot_tax_on_gatekeeper() {
     let gatekeeper_network = Keypair::new();
     let gatekeeper_authority = Keypair::new();
 
-    let client = RpcClient::new("https://metaplex.devnet.rpcpool.com".to_string());
+    // MI: change to miraland localhost
+    // let client = RpcClient::new("https://metaplex.devnet.rpcpool.com".to_string());
+    let client = RpcClient::new("http://127.0.0.1:8899".to_string());
 
     let gateway_account_pubkey = GATEWAY_ACCOUNT_PUBKEY;
     let gateway_executable_pubkey =
@@ -354,7 +356,7 @@ async fn bot_tax_on_gatekeeper() {
             &gateway_account,
             &gatekeeper_authority.pubkey(),
             &gatekeeper_account,
-            // GatewayTokenState::Revoked,
+            GatewayTokenState::Revoked,
         )],
         Some(&context.payer.pubkey()),
         &[&context.payer, &gatekeeper_authority],

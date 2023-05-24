@@ -2,7 +2,7 @@ use std::{fmt::Debug, str::FromStr};
 
 use anchor_lang::AccountDeserialize;
 use mpl_token_metadata::{pda::find_collection_authority_account, state::Metadata};
-use solana_gateway::state::{get_expire_address_with_seed, get_gateway_token_address_with_seed};
+use miraland_gateway::state::{get_expire_address_with_seed, get_gateway_token_address_with_seed};
 use solana_program::{clock::Clock, program_option::COption, pubkey::Pubkey};
 use solana_program_test::ProgramTestContext;
 use solana_sdk::{
@@ -602,7 +602,7 @@ impl CandyManager {
             None => {
                 GatekeeperInfo::init(
                     false,
-                    Pubkey::from_str("gatem74V238djXdzWnJf94Wo1DcnuGkfijbf3AuBhfs").unwrap(),
+                    Pubkey::from_str("gtwyhHAjVceBRE9JkRPG7FoA62t1EqU2zT1C8uKBnoZ").unwrap(),
                     Pubkey::from_str("ignREusXmGrscGNUesoU9mxfds9AiYTezUKex2PsZV6").unwrap(),
                     GatekeeperConfig::default(),
                     minter.pubkey(),

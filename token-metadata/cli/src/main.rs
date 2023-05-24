@@ -15,7 +15,7 @@ use {
             EDITION, MAX_NAME_LENGTH, MAX_SYMBOL_LENGTH, MAX_URI_LENGTH, PREFIX,
         },
     },
-    solana_clap_utils::{
+    miraland_clap_utils::{
         input_parsers::pubkey_of,
         input_validators::{is_url, is_valid_pubkey, is_valid_signer},
     },

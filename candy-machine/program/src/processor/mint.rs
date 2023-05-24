@@ -10,10 +10,10 @@ use mpl_token_metadata::{
     },
     state::{MAX_NAME_LENGTH, MAX_URI_LENGTH},
 };
-// use solana_gateway::{
-//     state::{GatewayTokenAccess, InPlaceGatewayToken},
-//     Gateway,
-// };
+use miraland_gateway::{
+    state::{GatewayTokenAccess, InPlaceGatewayToken},
+    Gateway,
+};
 use solana_program::{
     clock::Clock,
     program::{invoke, invoke_signed},
@@ -27,7 +27,7 @@ use crate::{
     constants::{
         A_TOKEN, BLOCK_HASHES, BOT_FEE, COLLECTIONS_FEATURE_INDEX, COMPUTE_BUDGET,
         CONFIG_ARRAY_START, CONFIG_LINE_SIZE, CUPCAKE_ID, EXPIRE_OFFSET, FREEZE_FEATURE_INDEX,
-        GUMDROP_ID, PREFIX,
+        REDROP, PREFIX,
     },
     utils::*,
     CandyError, CandyMachine, CandyMachineData, ConfigLine, EndSettingType, FreezePDA,
@@ -150,7 +150,7 @@ pub fn handle_mint_nft<'info>(
     }
     // Restrict Who can call Candy Machine via CPI
     if !cmp_pubkeys(&current_ix.program_id, &crate::id())
-        && !cmp_pubkeys(&current_ix.program_id, &GUMDROP_ID)
+        && !cmp_pubkeys(&current_ix.program_id, &REDROP)
         && !cmp_pubkeys(&current_ix.program_id, &CUPCAKE_ID)
     {
         punish_bots(
@@ -255,76 +255,76 @@ pub fn handle_mint_nft<'info>(
         }
     }
     let mut remaining_accounts_counter: usize = 0;
-    // if let Some(gatekeeper) = &candy_machine.data.gatekeeper {
-    //     let gateway_token_info = &ctx.remaining_accounts[remaining_accounts_counter];
+    if let Some(gatekeeper) = &candy_machine.data.gatekeeper {
+        let gateway_token_info = &ctx.remaining_accounts[remaining_accounts_counter];
 
-    //     remaining_accounts_counter += 1;
+        remaining_accounts_counter += 1;
 
-    //     // Eval function used in the gateway CPI
-    //     let eval_function =
-    //         |token: &InPlaceGatewayToken<&[u8]>| match (&candy_machine.data, token.expire_time()) {
-    //             (
-    //                 CandyMachineData {
-    //                     go_live_date: Some(go_live_date),
-    //                     whitelist_mint_settings: Some(WhitelistMintSettings { presale, .. }),
-    //                     ..
-    //                 },
-    //                 Some(expire_time),
-    //             ) if !*presale && expire_time < go_live_date + EXPIRE_OFFSET => {
-    //                 msg!(
-    //                     "Invalid gateway token: calculated creation time {} and go_live_date {}",
-    //                     expire_time - EXPIRE_OFFSET,
-    //                     go_live_date
-    //                 );
-    //                 Err(error!(CandyError::GatewayTokenExpireTimeInvalid).into())
-    //             }
-    //             _ => Ok(()),
-    //         };
+        // Eval function used in the gateway CPI
+        let eval_function =
+            |token: &InPlaceGatewayToken<&[u8]>| match (&candy_machine.data, token.expire_time()) {
+                (
+                    CandyMachineData {
+                        go_live_date: Some(go_live_date),
+                        whitelist_mint_settings: Some(WhitelistMintSettings { presale, .. }),
+                        ..
+                    },
+                    Some(expire_time),
+                ) if !*presale && expire_time < go_live_date + EXPIRE_OFFSET => {
+                    msg!(
+                        "Invalid gateway token: calculated creation time {} and go_live_date {}",
+                        expire_time - EXPIRE_OFFSET,
+                        go_live_date
+                    );
+                    Err(error!(CandyError::GatewayTokenExpireTimeInvalid).into())
+                }
+                _ => Ok(()),
+            };
 
-    //     if gatekeeper.expire_on_use {
-    //         let gateway_app = &ctx.remaining_accounts[remaining_accounts_counter];
-    //         remaining_accounts_counter += 1;
-    //         let network_expire_feature = &ctx.remaining_accounts[remaining_accounts_counter];
-    //         remaining_accounts_counter += 1;
+        if gatekeeper.expire_on_use {
+            let gateway_app = &ctx.remaining_accounts[remaining_accounts_counter];
+            remaining_accounts_counter += 1;
+            let network_expire_feature = &ctx.remaining_accounts[remaining_accounts_counter];
+            remaining_accounts_counter += 1;
 
-    //         if Gateway::verify_and_expire_token_with_eval(
-    //             gateway_app.clone(),
-    //             gateway_token_info.clone(),
-    //             payer.deref().clone(),
-    //             &gatekeeper.gatekeeper_network,
-    //             network_expire_feature.clone(),
-    //             eval_function,
-    //         )
-    //         .is_err()
-    //         {
-    //             punish_bots(
-    //                 CandyError::GatewayProgramError,
-    //                 payer.to_account_info(),
-    //                 ctx.accounts.candy_machine.to_account_info(),
-    //                 ctx.accounts.system_program.to_account_info(),
-    //                 BOT_FEE,
-    //             )?;
-    //             return Ok(());
-    //         }
-    //     } else if Gateway::verify_gateway_token_with_eval(
-    //         gateway_token_info,
-    //         &payer.key(),
-    //         &gatekeeper.gatekeeper_network,
-    //         None,
-    //         eval_function,
-    //     )
-    //     .is_err()
-    //     {
-    //         punish_bots(
-    //             CandyError::GatewayProgramError,
-    //             payer.to_account_info(),
-    //             ctx.accounts.candy_machine.to_account_info(),
-    //             ctx.accounts.system_program.to_account_info(),
-    //             BOT_FEE,
-    //         )?;
-    //         return Ok(());
-    //     }
-    // }
+            if Gateway::verify_and_expire_token_with_eval(
+                gateway_app.clone(),
+                gateway_token_info.clone(),
+                payer.deref().clone(),
+                &gatekeeper.gatekeeper_network,
+                network_expire_feature.clone(),
+                eval_function,
+            )
+            .is_err()
+            {
+                punish_bots(
+                    CandyError::GatewayProgramError,
+                    payer.to_account_info(),
+                    ctx.accounts.candy_machine.to_account_info(),
+                    ctx.accounts.system_program.to_account_info(),
+                    BOT_FEE,
+                )?;
+                return Ok(());
+            }
+        } else if Gateway::verify_gateway_token_with_eval(
+            gateway_token_info,
+            &payer.key(),
+            &gatekeeper.gatekeeper_network,
+            None,
+            eval_function,
+        )
+        .is_err()
+        {
+            punish_bots(
+                CandyError::GatewayProgramError,
+                payer.to_account_info(),
+                ctx.accounts.candy_machine.to_account_info(),
+                ctx.accounts.system_program.to_account_info(),
+                BOT_FEE,
+            )?;
+            return Ok(());
+        }
+    }
 
     if let Some(ws) = &candy_machine.data.whitelist_mint_settings {
         let whitelist_token_account = &ctx.remaining_accounts[remaining_accounts_counter];

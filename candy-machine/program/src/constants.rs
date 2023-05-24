@@ -21,8 +21,8 @@ pub const CONFIG_LINE_SIZE: usize = 4 + MAX_NAME_LENGTH + 4 + MAX_URI_LENGTH;
 
 pub const BLOCK_HASHES: Pubkey =
     solana_program::pubkey!("SysvarRecentB1ockHashes11111111111111111111");
-pub const GUMDROP_ID: Pubkey =
-    solana_program::pubkey!("gdrpGjVffourzkdDRrQmySw4aTHr8a3xmQzzxSwFD1a");
+pub const REDROP: Pubkey =
+    solana_program::pubkey!("rdrppvBxnXBwBXVLTsoGuBZiZfhJu3JtGLUfMaJpgjQ");
 pub const CUPCAKE_ID: Pubkey =
     solana_program::pubkey!("cakeGJxEdGpZ3MJP8sM3QypwzuzZpko1ueonUQgKLPE");
 pub const A_TOKEN: Pubkey = solana_program::pubkey!("ATAccPjxdgWfJKKN4PmfJ55FbEDEwD8zJUwVjuL9MuHy");
