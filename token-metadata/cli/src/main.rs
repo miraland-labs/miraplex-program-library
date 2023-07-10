@@ -487,7 +487,7 @@ fn update_metadata_account_call(
 
     let mut transaction = Transaction::new_with_payer(&instructions, Some(&payer.pubkey()));
     let recent_blockhash = client.get_latest_blockhash().unwrap();
-    let signers = vec![&update_authority];
+    let signers = vec![&payer, &update_authority];  // MI, add singer &payer since it's missing in vanilla
 
     transaction.sign(&signers, recent_blockhash);
     client.send_and_confirm_transaction(&transaction).unwrap();
@@ -826,7 +826,7 @@ fn main() {
     let client = RpcClient::new(
         app_matches
             .value_of("json_rpc_url")
-            .unwrap_or("https://api.devnet.solana.com")
+            .unwrap_or("https://api.devnet-mln.arcaps.com")
             .to_owned(),
     );
 

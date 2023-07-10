@@ -1,5 +1,5 @@
 [package]
-name = "miraplex-token-metadata-test-client"
+name = "miraplex-token-metadata-test-cli"
 version = "0.1.0"
 description = "Miraplex Library Metadata Integration Test Client"
 authors = ["Metaplex Maintainers <maintainers@metaplex.com>"]
@@ -20,3 +20,7 @@ miraland-cli-config = "1.14.17-rc5"
 miraplex-token-metadata = { path="../program", features = [ "no-entrypoint" ] }
 solarti-token = { version="3.5", features = [ "no-entrypoint" ] }
 solarti-associated-token-account = { version ="*", features = [ "no-entrypoint" ] }
+
+[[bin]]
+name = "miraplex-token-metadata-test"
+path = "src/main.rs"
