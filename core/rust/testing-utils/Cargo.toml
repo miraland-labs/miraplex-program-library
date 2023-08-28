@@ -18,9 +18,9 @@ name = "mpl_testing_utils"
 anchor-client = "0.25"
 shellexpand = "2.1.0"
 serde_json = "1.0"
-miraland-program-test = "=1.14.17-rc5"
-miraland-program = "=1.14.17-rc5"
-miraland-sdk = "=1.14.17-rc5" 
+miraland-program-test = "=1.14.17-rc6"
+miraland-program = "=1.14.17-rc6"
+miraland-sdk = "=1.14.17-rc6" 
 solarti-token = { version = "3.5",  features = ["no-entrypoint"] }
 solarti-associated-token-account = { version = "1.1",  features = ["no-entrypoint"] }
 mpl-token-metadata = { version="1.4", features = [ "no-entrypoint" ] }

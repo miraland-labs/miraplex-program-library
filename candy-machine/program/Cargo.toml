@@ -29,13 +29,13 @@ solarti-associated-token-account = { version = "1.1.6", features = [
   "no-entrypoint",
 ] }
 anchor-spl = { package = "solarti-anchor-spl", version = "0.26.0" }
-miraland-program = "=1.14.17-rc5"
+miraland-program = "=1.14.17-rc6"
 miraland-gateway = "0.1.0"
 toml_datetime = "=0.6.1"
 
 [dev-dependencies]
-miraland-program-test = "=1.14.17-rc5"
-miraland-sdk = "=1.14.17-rc5"
+miraland-program-test = "=1.14.17-rc6"
+miraland-sdk = "=1.14.17-rc6"
 anchor-client = { package = "solarti-anchor-client", version = "0.26.0" }
 borsh = "~0.9.2"
 tarpc = "0.29.0"

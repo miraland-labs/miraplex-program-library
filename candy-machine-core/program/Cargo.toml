@@ -22,7 +22,7 @@ default = []
 anchor-lang = { package = "solarti-anchor-lang", version = "0.27.0" }
 arrayref = "0.3.6"
 miraplex-token-metadata = { version = "1.7.1", features = ["no-entrypoint"] }
-miraland-program = "=1.14.17-rc5"
+miraland-program = "=1.14.17-rc6"
 solarti-token = { version = "3.5", features = ["no-entrypoint"] }
 
 [profile.release]
