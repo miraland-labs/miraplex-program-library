@@ -2699,9 +2699,9 @@ dependencies = [
 
 [[package]]
 name = "miraplex-rooster"
-version = "0.1.5"
+version = "0.1.6"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "899c9752e36a599bce26b8fa038f416cd73c30552d29a396b391a11e4774d36e"
+checksum = "3a8b89ca5801a69dc0f9fbeed4eee5e68543bb223584815dadbbeda2df428305"
 dependencies = [
  "borsh",
  "miraland-program",
@@ -2735,7 +2735,7 @@ dependencies = [
 
 [[package]]
 name = "miraplex-token-metadata"
-version = "1.7.3"
+version = "1.7.4"
 dependencies = [
  "arrayref",
  "blake3",
@@ -2809,7 +2809,7 @@ dependencies = [
  "miraland-client",
  "miraland-program",
  "miraland-sdk",
- "miraplex-token-metadata 1.7.3",
+ "miraplex-token-metadata 1.7.4",
  "solarti-associated-token-account",
  "solarti-token",
 ]
