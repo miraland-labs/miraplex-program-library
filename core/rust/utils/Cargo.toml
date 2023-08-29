@@ -1,6 +1,6 @@
 [package]
 name = "miraplex-utils"
-version = "0.0.10"
+version = "0.0.11"
 edition = "2021"
 description = "MPL Core Utils library"
 authors = ["Metaplex Developers <dev@metaplex.com>"]
@@ -15,7 +15,7 @@ path = "src/lib.rs"
 name = "mpl_utils"
 
 [dependencies]
-miraland-program = "1.14.17-rc6"
+miraland-program = "1.14.17-rc5"
 borsh = "0.9.3"
 arrayref = "0.3.6"
 solarti-token = { version = "3.5", features = ["no-entrypoint"], optional = true }
