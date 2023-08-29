@@ -1,4 +1,5 @@
 [workspace]
+resolver = "2"  # MI, some crates are on edition 2021 which defaults to `resolver = "2"`
 members=[
   "macro",
   "program",
