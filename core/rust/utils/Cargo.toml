@@ -1,6 +1,6 @@
 [package]
 name = "miraplex-utils"
-version = "0.1.0"
+version = "0.3.0"
 edition = "2021"
 description = "MPL Core Utils library"
 authors = [
@@ -19,12 +19,9 @@ name = "mpl_utils"
 
 [dependencies]
 miraland-program = "1.18.0"
-# borsh = "0.9.3"
 borsh = { version = "1.2.1", features = ["derive", "unstable__schema"] }
 arrayref = "0.3.6"
 solarti-token = { version = "4.0", features = ["no-entrypoint"], optional = true }
-# blake3 = "=1.3.1"  # MI
-# toml_datetime = "=0.6.1"  # MI
 
 [features]
 token = ["solarti-token"]
