@@ -42,7 +42,8 @@ use crate::{
             process_convert_master_edition_v1_to_v2, process_create_master_edition,
             process_mint_new_edition_from_master_edition_via_token,
         },
-        escrow::process_transfer_out_of_escrow,
+        // MI, avoid private item here shadows public re-export previously
+        // escrow::process_transfer_out_of_escrow,
     },
     state::{
         Key, Metadata, TokenMetadataAccount, TokenStandard, TokenState, DISCRIMINATOR_INDEX,
@@ -347,7 +348,7 @@ fn process_legacy_instruction<'a>(
         }
         MetadataInstruction::TransferOutOfEscrow(args) => {
             msg!("Instruction: Transfer Out Of Escrow");
-            process_transfer_out_of_escrow(program_id, accounts, args)
+           escrow::process_transfer_out_of_escrow(program_id, accounts, args)
         }
         _ => Err(ProgramError::InvalidInstructionData),
     }

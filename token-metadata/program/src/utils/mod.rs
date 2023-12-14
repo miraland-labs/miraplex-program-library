@@ -18,7 +18,7 @@ pub use mpl_utils::{
 };
 pub use programmable_asset::*;
 use solana_program::{
-    account_info::AccountInfo, borsh::try_from_slice_unchecked, entrypoint::ProgramResult, msg,
+    account_info::AccountInfo, borsh0_10::try_from_slice_unchecked, entrypoint::ProgramResult, msg,
     program::invoke_signed, program_error::ProgramError, pubkey::Pubkey, system_program,
 };
 use spl_token::instruction::{set_authority, AuthorityType};

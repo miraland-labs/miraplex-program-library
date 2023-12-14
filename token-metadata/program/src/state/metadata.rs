@@ -253,10 +253,18 @@ impl TokenMetadataAccount for Metadata {
 // caused by resizing of the Creators array. We use a custom `meta_deser_unchecked` function
 // that has fallback values for corrupted fields.
 impl borsh::de::BorshDeserialize for Metadata {
-    fn deserialize(buf: &mut &[u8]) -> ::core::result::Result<Self, BorshError> {
-        let md = meta_deser_unchecked(buf)?;
+    // MI, for borsh <= 0.9.3
+    // fn deserialize(buf: &mut &[u8]) -> ::core::result::Result<Self, BorshError> {
+    //     let md = meta_deser_unchecked(buf)?;
+    //     Ok(md)
+    // }
+
+    // MI, for borsh 0.10.3 and above
+    fn deserialize_reader<R: Reader>(reader: &mut R) -> Result<Self, BorshError> {
+        let md = meta_deser_unchecked(reader)?;
         Ok(md)
     }
+
 }
 
 #[repr(C)]
