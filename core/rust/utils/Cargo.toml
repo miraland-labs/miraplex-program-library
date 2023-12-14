@@ -1,9 +1,12 @@
 [package]
 name = "miraplex-utils"
-version = "0.0.11"
+version = "0.1.0"
 edition = "2021"
 description = "MPL Core Utils library"
-authors = ["Metaplex Developers <dev@metaplex.com>"]
+authors = [
+  "Miraplexer <miraplexer@outlook.com>",
+  "Metaplex Developers <dev@metaplex.com>"
+]
 repository = "https://github.com/miraland-labs/miraplex-program-library"
 license-file = "../../../LICENSE"
 readme = "README.md"
@@ -15,12 +18,13 @@ path = "src/lib.rs"
 name = "mpl_utils"
 
 [dependencies]
-miraland-program = "1.14.17-rc5"
-borsh = "0.9.3"
+miraland-program = "1.18.0"
+# borsh = "0.9.3"
+borsh = { version = "1.2.1", features = ["derive", "unstable__schema"] }
 arrayref = "0.3.6"
-solarti-token = { version = "3.5", features = ["no-entrypoint"], optional = true }
-blake3 = "=1.3.1"  # MI
-toml_datetime = "=0.6.1"  # MI
+solarti-token = { version = "4.0", features = ["no-entrypoint"], optional = true }
+# blake3 = "=1.3.1"  # MI
+# toml_datetime = "=0.6.1"  # MI
 
 [features]
 token = ["solarti-token"]
