@@ -80,8 +80,7 @@ pub fn approve_use_authority(
             AccountMeta::new_readonly(spl_token::id(), false),
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
         ],
-        data: MetadataInstruction::ApproveUseAuthority(ApproveUseAuthorityArgs { number_of_uses })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::ApproveUseAuthority(ApproveUseAuthorityArgs { number_of_uses }))
             .unwrap(),
     }
 }
@@ -124,8 +123,7 @@ pub fn revoke_use_authority(
             AccountMeta::new_readonly(spl_token::id(), false),
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
         ],
-        data: MetadataInstruction::RevokeUseAuthority
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::RevokeUseAuthority)
             .unwrap(),
     }
 }
@@ -181,8 +179,7 @@ pub fn utilize(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::Utilize(UtilizeArgs { number_of_uses })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::Utilize(UtilizeArgs { number_of_uses }))
             .unwrap(),
     }
 }

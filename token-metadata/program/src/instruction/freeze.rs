@@ -1,4 +1,3 @@
-use borsh::BorshSerialize;
 use solana_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
@@ -32,8 +31,7 @@ pub fn freeze_delegated_account(
             AccountMeta::new_readonly(mint, false),
             AccountMeta::new_readonly(spl_token::id(), false),
         ],
-        data: MetadataInstruction::FreezeDelegatedAccount
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::FreezeDelegatedAccount)
             .unwrap(),
     }
 }
@@ -64,8 +62,7 @@ pub fn thaw_delegated_account(
             AccountMeta::new_readonly(mint, false),
             AccountMeta::new_readonly(spl_token::id(), false),
         ],
-        data: MetadataInstruction::ThawDelegatedAccount
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::ThawDelegatedAccount)
             .unwrap(),
     }
 }

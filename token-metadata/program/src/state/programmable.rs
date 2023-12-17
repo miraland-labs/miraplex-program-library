@@ -125,6 +125,7 @@ pub enum TokenState {
 #[repr(C)]
 #[cfg_attr(feature = "serde-feature", derive(Serialize, Deserialize))]
 #[derive(BorshSerialize, BorshDeserialize, PartialEq, Eq, Debug, Clone, Copy)]
+#[borsh(use_discriminant=false)]
 pub enum TokenDelegateRole {
     Sale,
     Transfer,

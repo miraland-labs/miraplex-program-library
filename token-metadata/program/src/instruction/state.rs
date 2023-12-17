@@ -75,8 +75,7 @@ impl InstructionBuilder for super::builders::Lock {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Lock(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Lock(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -131,8 +130,7 @@ impl InstructionBuilder for super::builders::Unlock {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Unlock(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Unlock(self.args.clone()))
                 .unwrap(),
         }
     }

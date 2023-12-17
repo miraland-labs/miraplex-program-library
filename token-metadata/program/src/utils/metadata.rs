@@ -1,5 +1,5 @@
 // use borsh::{maybestd::io::Error as BorshError, BorshDeserialize, BorshSerialize}; // MI, borsh 0.10.3
-use borsh::{io::Error as BorshError, BorshDeserialize, BorshSerialize};
+use borsh::{io::Error as BorshError, io::Read, BorshDeserialize, BorshSerialize};
 use mpl_utils::{create_or_allocate_account_raw, token::get_mint_authority};
 use solana_program::{
     account_info::AccountInfo, entrypoint::ProgramResult, program_option::COption, pubkey::Pubkey,
@@ -422,7 +422,7 @@ pub mod tests {
         let mut buf = pesky_data();
         // MI
         // let metadata = meta_deser_unchecked(&mut buf).unwrap();
-        let metadata = meta_deser_unchecked(&mut *buf).unwrap();
+        let metadata = meta_deser_unchecked(&mut buf).unwrap();
         let expected_metadata = expected_pesky_metadata();
 
         assert_eq!(metadata, expected_metadata);

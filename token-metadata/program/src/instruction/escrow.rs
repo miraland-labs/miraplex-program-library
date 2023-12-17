@@ -28,8 +28,7 @@ pub fn close_escrow_account(
         AccountMeta::new_readonly(system_program::id(), false),
         AccountMeta::new_readonly(sysvar::instructions::id(), false),
     ];
-    let data = MetadataInstruction::CloseEscrowAccount
-        .try_to_vec()
+    let data = borsh::to_vec(&MetadataInstruction::CloseEscrowAccount)
         .unwrap();
 
     Instruction {
@@ -64,8 +63,7 @@ pub fn create_escrow_account(
         accounts.push(AccountMeta::new_readonly(authority, true));
     }
 
-    let data = MetadataInstruction::CreateEscrowAccount
-        .try_to_vec()
+    let data = borsh::to_vec(&MetadataInstruction::CreateEscrowAccount)
         .unwrap();
 
     Instruction {
@@ -114,8 +112,7 @@ pub fn transfer_out_of_escrow(
         accounts.push(AccountMeta::new_readonly(authority, true));
     }
 
-    let data = MetadataInstruction::TransferOutOfEscrow(TransferOutOfEscrowArgs { amount })
-        .try_to_vec()
+    let data = borsh::to_vec(&MetadataInstruction::TransferOutOfEscrow(TransferOutOfEscrowArgs { amount }))
         .unwrap();
 
     Instruction {

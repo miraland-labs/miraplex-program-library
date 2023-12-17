@@ -39,7 +39,7 @@ pub struct Payload {
 
 #[repr(C)]
 #[cfg_attr(feature = "serde-feature", derive(Serialize, Deserialize))]
-#[derive(BorshSerialize, BorshDeserialize, PartialOrd, Hash, PartialEq, Eq, Debug, Clone, Copy)]
+#[derive(BorshSerialize, BorshDeserialize, PartialOrd, Ord, Hash, PartialEq, Eq, Debug, Clone, Copy)]
 pub enum PayloadKey {
     Target,
     Holder,

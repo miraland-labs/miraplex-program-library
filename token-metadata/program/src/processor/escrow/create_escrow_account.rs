@@ -1,4 +1,3 @@
-use borsh::BorshSerialize;
 use mpl_utils::{assert_signer, create_or_allocate_account_raw};
 use solana_program::{
     account_info::{next_account_info, AccountInfo},
@@ -100,8 +99,7 @@ pub fn process_create_escrow_account(
         bump: bump_seed[0],
     };
 
-    let serialized_data = toe
-        .try_to_vec()
+    let serialized_data = borsh::to_vec(&toe)
         .map_err(|_| MetadataError::BorshSerializationError)?;
 
     // Create the account.

@@ -26,8 +26,7 @@ pub fn convert_master_edition_v1_to_v2(
             AccountMeta::new(one_time_auth, false),
             AccountMeta::new(printing_mint, false),
         ],
-        data: MetadataInstruction::ConvertMasterEditionV1ToV2
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::ConvertMasterEditionV1ToV2)
             .unwrap(),
     }
 }
@@ -66,8 +65,7 @@ pub fn create_master_edition_v3(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::CreateMasterEditionV3(CreateMasterEditionArgs { max_supply })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::CreateMasterEditionV3(CreateMasterEditionArgs { max_supply }))
             .unwrap(),
     }
 }
@@ -128,10 +126,9 @@ pub fn mint_new_edition_from_master_edition_via_token(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::MintNewEditionFromMasterEditionViaToken(
+        data: borsh::to_vec(&MetadataInstruction::MintNewEditionFromMasterEditionViaToken(
             MintNewEditionFromMasterEditionViaTokenArgs { edition },
-        )
-        .try_to_vec()
+        ))
         .unwrap(),
     }
 }

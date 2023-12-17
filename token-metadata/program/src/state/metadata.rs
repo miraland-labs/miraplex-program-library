@@ -260,7 +260,7 @@ impl borsh::de::BorshDeserialize for Metadata {
     // }
 
     // MI, for borsh 0.10.3 and above
-    fn deserialize_reader<R: Reader>(reader: &mut R) -> Result<Self, BorshError> {
+    fn deserialize_reader<R: borsh::io::Read>(reader: &mut R) -> Result<Self, BorshError> {
         let md = meta_deser_unchecked(reader)?;
         Ok(md)
     }

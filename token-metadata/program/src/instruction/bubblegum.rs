@@ -1,4 +1,3 @@
-use borsh::BorshSerialize;
 use solana_program::{
     instruction::{AccountMeta, Instruction},
     pubkey::Pubkey,
@@ -29,8 +28,7 @@ pub fn bubblegum_set_collection_size(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::BubblegumSetCollectionSize(SetCollectionSizeArgs { size })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::BubblegumSetCollectionSize(SetCollectionSizeArgs { size }))
             .unwrap(),
     }
 }

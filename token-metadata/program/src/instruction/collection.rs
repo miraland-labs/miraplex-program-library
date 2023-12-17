@@ -43,8 +43,7 @@ pub fn approve_collection_authority(
             AccountMeta::new_readonly(mint, false),
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
         ],
-        data: MetadataInstruction::ApproveCollectionAuthority
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::ApproveCollectionAuthority)
             .unwrap(),
     }
 }
@@ -78,8 +77,7 @@ pub fn revoke_collection_authority(
             AccountMeta::new_readonly(metadata, false),
             AccountMeta::new_readonly(mint, false),
         ],
-        data: MetadataInstruction::RevokeCollectionAuthority
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::RevokeCollectionAuthority)
             .unwrap(),
     }
 }
@@ -131,8 +129,7 @@ pub fn set_and_verify_collection(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::SetAndVerifyCollection
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::SetAndVerifyCollection)
             .unwrap(),
     }
 }
@@ -182,8 +179,7 @@ pub fn set_and_verify_sized_collection_item(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::SetAndVerifySizedCollectionItem
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::SetAndVerifySizedCollectionItem)
             .unwrap(),
     }
 }
@@ -216,8 +212,7 @@ pub fn set_collection_size(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::SetCollectionSize(SetCollectionSizeArgs { size })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::SetCollectionSize(SetCollectionSizeArgs { size }))
             .unwrap(),
     }
 }
@@ -262,8 +257,7 @@ pub fn unverify_collection(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::UnverifyCollection
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::UnverifyCollection)
             .unwrap(),
     }
 }
@@ -310,8 +304,7 @@ pub fn unverify_sized_collection_item(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::UnverifySizedCollectionItem
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::UnverifySizedCollectionItem)
             .unwrap(),
     }
 }
@@ -358,7 +351,7 @@ pub fn verify_collection(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::VerifyCollection.try_to_vec().unwrap(),
+        data: borsh::to_vec(&MetadataInstruction::VerifyCollection).unwrap(),
     }
 }
 
@@ -401,8 +394,7 @@ pub fn verify_sized_collection_item(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::VerifySizedCollectionItem
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::VerifySizedCollectionItem)
             .unwrap(),
     }
 }

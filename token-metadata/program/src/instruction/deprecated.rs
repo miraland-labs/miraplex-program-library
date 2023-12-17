@@ -61,7 +61,7 @@ pub fn create_metadata_accounts_v2(
             AccountMeta::new_readonly(update_authority, update_authority_is_signer),
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
         ],
-        data: MetadataInstruction::CreateMetadataAccountV2(CreateMetadataAccountArgsV2 {
+        data: borsh::to_vec(&MetadataInstruction::CreateMetadataAccountV2(CreateMetadataAccountArgsV2 {
             data: DataV2 {
                 name,
                 symbol,
@@ -72,8 +72,7 @@ pub fn create_metadata_accounts_v2(
                 uses,
             },
             is_mutable,
-        })
-        .try_to_vec()
+        }))
         .unwrap(),
     }
 }
@@ -109,8 +108,7 @@ pub fn create_master_edition(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::CreateMasterEdition(CreateMasterEditionArgs { max_supply })
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::CreateMasterEdition(CreateMasterEditionArgs { max_supply }))
             .unwrap(),
     }
 }
@@ -158,7 +156,7 @@ pub fn create_metadata_accounts(
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
             AccountMeta::new_readonly(sysvar::rent::id(), false),
         ],
-        data: MetadataInstruction::CreateMetadataAccount(CreateMetadataAccountArgs {
+        data: borsh::to_vec(&MetadataInstruction::CreateMetadataAccount(CreateMetadataAccountArgs {
             data: Data {
                 name,
                 symbol,
@@ -167,8 +165,7 @@ pub fn create_metadata_accounts(
                 creators,
             },
             is_mutable,
-        })
-        .try_to_vec()
+        }))
         .unwrap(),
     }
 }
@@ -206,12 +203,11 @@ pub fn update_metadata_accounts(
             AccountMeta::new(metadata_account, false),
             AccountMeta::new_readonly(update_authority, true),
         ],
-        data: MetadataInstruction::UpdateMetadataAccount(UpdateMetadataAccountArgs {
+        data: borsh::to_vec(&MetadataInstruction::UpdateMetadataAccount(UpdateMetadataAccountArgs {
             data,
             update_authority: new_update_authority,
             primary_sale_happened,
-        })
-        .try_to_vec()
+        }))
         .unwrap(),
     }
 }
@@ -260,10 +256,9 @@ pub fn mint_edition_from_master_edition_via_vault_proxy(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::MintNewEditionFromMasterEditionViaVaultProxy(
+        data: borsh::to_vec(&MetadataInstruction::MintNewEditionFromMasterEditionViaVaultProxy(
             MintNewEditionFromMasterEditionViaTokenArgs { edition },
-        )
-        .try_to_vec()
+        ))
         .unwrap(),
     }
 }

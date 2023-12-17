@@ -21,7 +21,7 @@ use {
     },
     miraland_client::rpc_client::RpcClient,
     solana_program::{
-        account_info::AccountInfo, borsh::try_from_slice_unchecked, program_pack::Pack,
+        account_info::AccountInfo, borsh1::try_from_slice_unchecked, program_pack::Pack,
     },
     solana_sdk::{
         pubkey::Pubkey,

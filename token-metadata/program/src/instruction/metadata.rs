@@ -338,7 +338,7 @@ pub fn create_metadata_accounts_v3(
             AccountMeta::new_readonly(update_authority, update_authority_is_signer),
             AccountMeta::new_readonly(solana_program::system_program::id(), false),
         ],
-        data: MetadataInstruction::CreateMetadataAccountV3(CreateMetadataAccountArgsV3 {
+        data: borsh::to_vec(&MetadataInstruction::CreateMetadataAccountV3(CreateMetadataAccountArgsV3 {
             data: DataV2 {
                 name,
                 symbol,
@@ -350,8 +350,7 @@ pub fn create_metadata_accounts_v3(
             },
             is_mutable,
             collection_details,
-        })
-        .try_to_vec()
+        }))
         .unwrap(),
     }
 }
@@ -361,7 +360,7 @@ pub fn puff_metadata_account(program_id: Pubkey, metadata_account: Pubkey) -> In
     Instruction {
         program_id,
         accounts: vec![AccountMeta::new(metadata_account, false)],
-        data: MetadataInstruction::PuffMetadata.try_to_vec().unwrap(),
+        data: borsh::to_vec(&MetadataInstruction::PuffMetadata).unwrap(),
     }
 }
 
@@ -378,8 +377,7 @@ pub fn remove_creator_verification(
             AccountMeta::new(metadata, false),
             AccountMeta::new_readonly(creator, true),
         ],
-        data: MetadataInstruction::RemoveCreatorVerification
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::RemoveCreatorVerification)
             .unwrap(),
     }
 }
@@ -396,7 +394,7 @@ pub fn set_token_standard(
         AccountMeta::new(update_authority, true),
         AccountMeta::new_readonly(mint_account, false),
     ];
-    let data = MetadataInstruction::SetTokenStandard.try_to_vec().unwrap();
+    let data = borsh::to_vec(&MetadataInstruction::SetTokenStandard).unwrap();
 
     if let Some(edition_account) = edition_account {
         accounts.push(AccountMeta::new_readonly(edition_account, false));
@@ -418,7 +416,7 @@ pub fn sign_metadata(program_id: Pubkey, metadata: Pubkey, creator: Pubkey) -> I
             AccountMeta::new(metadata, false),
             AccountMeta::new_readonly(creator, true),
         ],
-        data: MetadataInstruction::SignMetadata.try_to_vec().unwrap(),
+        data: borsh::to_vec(&MetadataInstruction::SignMetadata).unwrap(),
     }
 }
 
@@ -438,13 +436,12 @@ pub fn update_metadata_accounts_v2(
             AccountMeta::new(metadata_account, false),
             AccountMeta::new_readonly(update_authority, true),
         ],
-        data: MetadataInstruction::UpdateMetadataAccountV2(UpdateMetadataAccountArgsV2 {
+        data: borsh::to_vec(&MetadataInstruction::UpdateMetadataAccountV2(UpdateMetadataAccountArgsV2 {
             data,
             update_authority: new_update_authority,
             primary_sale_happened,
             is_mutable,
-        })
-        .try_to_vec()
+        }))
         .unwrap(),
     }
 }
@@ -464,8 +461,7 @@ pub fn update_primary_sale_happened_via_token(
             AccountMeta::new_readonly(owner, true),
             AccountMeta::new_readonly(token, false),
         ],
-        data: MetadataInstruction::UpdatePrimarySaleHappenedViaToken
-            .try_to_vec()
+        data: borsh::to_vec(&MetadataInstruction::UpdatePrimarySaleHappenedViaToken)
             .unwrap(),
     }
 }
@@ -507,8 +503,7 @@ impl InstructionBuilder for super::builders::Create {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Create(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Create(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -544,8 +539,7 @@ impl InstructionBuilder for super::builders::Migrate {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Migrate(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Migrate(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -601,8 +595,7 @@ impl InstructionBuilder for super::builders::Mint {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Mint(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Mint(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -670,8 +663,7 @@ impl InstructionBuilder for super::builders::Transfer {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Transfer(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Transfer(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -715,8 +707,7 @@ impl InstructionBuilder for super::builders::Update {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Update(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Update(self.args.clone()))
                 .unwrap(),
         }
     }

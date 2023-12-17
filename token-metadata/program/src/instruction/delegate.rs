@@ -132,8 +132,7 @@ impl InstructionBuilder for super::builders::Delegate {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Delegate(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Delegate(self.args.clone()))
                 .unwrap(),
         }
     }
@@ -190,8 +189,7 @@ impl InstructionBuilder for super::builders::Revoke {
         Instruction {
             program_id: crate::ID,
             accounts,
-            data: MetadataInstruction::Revoke(self.args.clone())
-                .try_to_vec()
+            data: borsh::to_vec(&MetadataInstruction::Revoke(self.args.clone()))
                 .unwrap(),
         }
     }

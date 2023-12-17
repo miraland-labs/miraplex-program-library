@@ -53,7 +53,7 @@ pub fn burn_edition_nft(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::BurnEditionNft.try_to_vec().unwrap(),
+        data: borsh::to_vec(&MetadataInstruction::BurnEditionNft).unwrap(),
     }
 }
 
@@ -94,7 +94,7 @@ pub fn burn_nft(
     Instruction {
         program_id,
         accounts,
-        data: MetadataInstruction::BurnNft.try_to_vec().unwrap(),
+        data: borsh::to_vec(&MetadataInstruction::BurnNft).unwrap(),
     }
 }
 
