@@ -3358,6 +3358,22 @@ dependencies = [
 ]
 
 [[package]]
+name = "miraplex-rooster"
+version = "0.1.7"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "2f2a5aeae59d7afa0590121cd66b310a8c7cbc314336cf9475a56913b4fe154a"
+dependencies = [
+ "borsh 1.2.1",
+ "miraland-program",
+ "miraplex-token-metadata 1.7.5",
+ "miraplex-utils",
+ "num-derive 0.3.3",
+ "num-traits",
+ "shank 0.0.10",
+ "thiserror",
+]
+
+[[package]]
 name = "miraplex-token-auth-rules"
 version = "1.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -3379,12 +3395,33 @@ dependencies = [
 [[package]]
 name = "miraplex-token-metadata"
 version = "1.7.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "a56fa3d151aaacca7af67fb73e534ae8b36ee59cc03ff6e4651ca5823ddb0ac9"
+dependencies = [
+ "arrayref",
+ "borsh 1.2.1",
+ "miraland-program",
+ "miraplex-token-auth-rules",
+ "miraplex-token-metadata-context-derive 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)",
+ "miraplex-utils",
+ "num-derive 0.3.3",
+ "num-traits",
+ "shank 0.0.12",
+ "solarti-associated-token-account",
+ "solarti-token 4.0.0",
+ "thiserror",
+]
+
+[[package]]
+name = "miraplex-token-metadata"
+version = "1.7.6"
 dependencies = [
  "arrayref",
  "borsh 1.2.1",
  "miraland-program",
  "miraland-program-test",
  "miraland-sdk",
+ "miraplex-rooster",
  "miraplex-token-auth-rules",
  "miraplex-token-metadata-context-derive 0.2.1",
  "miraplex-utils",
@@ -3429,7 +3466,7 @@ dependencies = [
  "miraland-client",
  "miraland-program",
  "miraland-sdk",
- "miraplex-token-metadata",
+ "miraplex-token-metadata 1.7.6",
  "solarti-associated-token-account",
  "solarti-token 3.5.6",
 ]
@@ -4733,6 +4770,15 @@ dependencies = [
 
 [[package]]
 name = "shank"
+version = "0.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "90b0d7b8998cc311310854451e7f5903cf3a151ca93ef6aa2b8b6c369a037b21"
+dependencies = [
+ "shank_macro 0.0.10",
+]
+
+[[package]]
+name = "shank"
 version = "0.0.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b63e565b5e95ad88ab38f312e89444c749360641c509ef2de0093b49f55974a5"
@@ -4747,6 +4793,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "439c00542aa8b4c777750b3130ce36fcff86ba215d54006d47d67359513b70be"
 dependencies = [
  "shank_macro 0.0.12",
+]
+
+[[package]]
+name = "shank_macro"
+version = "0.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b3a37d6cf5df84eb622cb6fc74071d5d773c6a23b9ec55691db7b6a8c2286926"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "shank_macro_impl 0.0.10",
+ "syn 1.0.109",
 ]
 
 [[package]]
@@ -4771,6 +4829,19 @@ dependencies = [
  "quote",
  "shank_macro_impl 0.0.12",
  "shank_render",
+ "syn 1.0.109",
+]
+
+[[package]]
+name = "shank_macro_impl"
+version = "0.0.10"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1314ff5d5a3dffd9b93de1463e2b6afc2350f17596d7d9b3fe0924c9edd250df"
+dependencies = [
+ "anyhow",
+ "proc-macro2",
+ "quote",
+ "serde",
  "syn 1.0.109",
 ]
 

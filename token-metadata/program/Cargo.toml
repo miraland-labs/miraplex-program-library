@@ -1,6 +1,6 @@
 [package]
 name = "miraplex-token-metadata"
-version = "1.7.5"
+version = "1.7.6"
 description = "Miraplex Metadata derived from Metaplex"
 authors = [
   "Miraplexer <miraplexer@outlook.com>",
@@ -41,9 +41,9 @@ thiserror = "1.0"
 rmp-serde = "1.1.1"
 miraland-program-test = "1.18.0"
 miraland-sdk = "1.18.0"
-# # miraplex-rooster = { git = "https://github.com/miraland-labs/rooster" }
-# # rooster = { package = "miraplex-rooster", path = "../../../rooster/program", version = "~0.1", features = ["no-entrypoint"] }
-# miraplex-rooster = "0.1.6"
+# miraplex-rooster = { git = "https://github.com/miraland-labs/rooster" }
+# rooster = { package = "miraplex-rooster", path = "../../../rooster/program", version = "~0.1", features = ["no-entrypoint"] }
+miraplex-rooster = "0.1.7"
 serde = { version = "1.0.147", features = ["derive"]}
 
 [lib]
