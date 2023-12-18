@@ -72,8 +72,8 @@ pub fn handle_initialize_candy_machine(
         return err!(CandyError::TooManyCreators);
     }
 
-    let mut new_data = CandyMachine::discriminator().try_to_vec().unwrap();
-    new_data.append(&mut candy_machine.try_to_vec().unwrap());
+    let mut new_data = borsh::to_vec(&CandyMachine::discriminator()).unwrap();
+    new_data.append(&mut borsh::to_vec(&candy_machine).unwrap());
     let mut data = candy_machine_account.data.borrow_mut();
     // god forgive me couldnt think of better way to deal with this
     for i in 0..new_data.len() {

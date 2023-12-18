@@ -54,7 +54,9 @@ pub fn handle_add_config_lines(
         fixed_config_lines.push(ConfigLine { name, uri })
     }
 
-    let as_vec = fixed_config_lines.try_to_vec()?;
+    // let as_vec = fixed_config_lines.try_to_vec()?;
+    // let as_vec = fixed_config_lines.to_vec()?;
+    let as_vec = borsh::to_vec(&fixed_config_lines)?;
     // remove unneeded u32 because we're just gonna edit the u32 at the front
     let serialized: &[u8] = &as_vec.as_slice()[4..];
 
